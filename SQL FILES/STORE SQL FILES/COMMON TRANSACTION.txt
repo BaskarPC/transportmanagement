@@ -1,0 +1,1 @@
+﻿insert into comon_transaction values('P6','Kerosene','Kerosene',10,20,3,4,20,30,10,5,6,0,0);

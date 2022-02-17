@@ -1,0 +1,11 @@
+ CREATE TABLE SCRAP_STORE(JOB_ID NUMBER(3) REFERENCES MAINTENANCE_MASTER(JOB_ID),
+                                    TASK_ID NUMBER(3),
+			    PART_NUMBER NUMBER(3),
+			    COMPANY NUMBER(3),
+			    BILL_NUMBERS VARCHAR2(30),
+			    CATEGORY NUMBER(4),
+			    ITEM_NAME VARCHAR2(30),
+			    ITEM_COUNT NUMBER(4),
+			    KILOGRAM NUMBER(3))
+                            
+/

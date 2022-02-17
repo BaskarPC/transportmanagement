@@ -1,0 +1,1 @@
+create table paintrequisition(jobid number,reqfrom varchar2(20),reqdate date,reason varchar2(30),vehicleNo Varchar2(40),Reqitem varchar2(10),paintname varchar2(15),paintcolor varchar2(15),availability number(4,2),qtyneeded number);

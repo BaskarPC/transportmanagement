@@ -1,0 +1,7 @@
+INSERT INTO LOOKUP VALUES('kerocloth','Kerosene');
+INSERT INTO LOOKUP VALUES('kerocloth','Cloth');
+
+INSERT INTO LOOKUP VALUES(,'paintname','Asian');
+INSERT INTO LOOKUP VALUES(,'paintname','Nerolac');
+INSERT INTO LOOKUP VALUES(,'Asian','White');
+INSERT INTO LOOKUP VALUES(,'Nerolac','Green');

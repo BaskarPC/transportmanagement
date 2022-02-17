@@ -1,0 +1,13 @@
+ CREATE TABLE GREASEOIL_KEROSENE(JOB_ID NUMBER(3),
+                            ITEM_TYPE NUMBER(4),
+                            AVAILABLE_QTY NUMBER(8,2),
+                            QTY_WANTED NUMBER(8,2),
+                            IQTY_OLD NUMBER(8,2),
+                            IQTY_NEW NUMBER(8,2),
+                            URATE_OLD NUMBER(8,2),
+                            URATE_NEW NUMBER(8,2),
+                            AMOUNT NUMBER(10,2),
+                            REASON_REQ NUMBER(3),
+                            CURRENT_KM NUMBER(10),
+                            PREV_SERVICED_KM NUMBER(10),
+                            DIFFERNCE_KM NUMBER(10))

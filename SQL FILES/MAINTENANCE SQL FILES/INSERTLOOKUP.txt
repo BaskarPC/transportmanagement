@@ -1,0 +1,235 @@
+insert into lookup values(1,'institution','KVITT');
+insert into lookup values(2,'institution','KEC');
+insert into lookup values(3,'institution','KPTC');
+insert into lookup values(4,'institution','KASC');
+insert into lookup values(5,'institution','KNMS');
+
+insert into lookup values(6,'vehicletype','Car');
+insert into lookup values(7,'vehicletype','Bus');
+insert into lookup values(8,'vehicletype','Lorry');
+insert into lookup values(9,'vehicletype','Ambulance');
+insert into lookup values(10,'vehicletype','Van');
+insert into lookup values(11,'vehicletype','Tempo');
+insert into lookup values(12,'vehicletype','Tractor');
+insert into lookup values(13,'vehicletype','Jeep');
+insert into lookup values(14,'vehicletype','Others');
+
+INSERT INTO LOOKUP VALUES(15,'district','Erode');
+INSERT INTO LOOKUP VALUES(16,'district','Coimbatore');
+INSERT INTO LOOKUP VALUES(17,'district','Salem');
+INSERT INTO LOOKUP VALUES(18,'district','Namakkal');
+INSERT INTO LOOKUP VALUES(19,'district','Trichy');
+
+INSERT INTO LOOKUP VALUES(20,'state','Tamilnadu');
+INSERT INTO LOOKUP VALUES(21,'state','Kerala');
+INSERT INTO LOOKUP VALUES(22,'state','Andhra Pradesh');
+
+INSERT INTO LOOKUP VALUES(23,'community','BC');
+INSERT INTO LOOKUP VALUES(24,'community','MBC');
+INSERT INTO LOOKUP VALUES(25,'community','OBC');
+INSERT INTO LOOKUP VALUES(26,'community','SC');
+INSERT INTO LOOKUP VALUES(27,'community','ST');
+INSERT INTO LOOKUP VALUES(28,'community','OTHERS');
+
+INSERT INTO LOOKUP VALUES(29,'religion','HINDU');
+INSERT INTO LOOKUP VALUES(30,'religion','CHRISTIAN');
+INSERT INTO LOOKUP VALUES(31,'religion','MUSLIM');
+INSERT INTO LOOKUP VALUES(32,'religion','OTHERS');
+
+insert into lookup values(33,'bloodgroup','O +ve');
+insert into lookup values(34,'bloodgroup','O -ve');
+insert into lookup values(35,'bloodgroup','A +ve');
+insert into lookup values(36,'bloodgroup','A -ve');
+insert into lookup values(37,'bloodgroup','B +ve');
+insert into lookup values(38,'bloodgroup','B -ve');
+insert into lookup values(39,'bloodgroup','AB +ve');
+insert into lookup values(40,'bloodgroup','AB -ve');
+insert into lookup values(41,'bloodgroup','A1 +ve');
+insert into lookup values(42,'bloodgroup','A1B +ve');
+insert into lookup values(43,'bloodgroup','A1 -ve');
+insert into lookup values(44,'bloodgroup','A1B -ve');
+
+INSERT INTO LOOKUP VALUES(45,'TYRESIZE','750 x 16');
+INSERT INTO LOOKUP VALUES(46,'TYRESIZE','1000 x 20');
+INSERT INTO LOOKUP VALUES(47,'TYRESIZE','900 x 20');
+INSERT INTO LOOKUP VALUES(48,'TYRESIZE','700 x 15');
+INSERT INTO LOOKUP VALUES(49,'TYRESIZE','600 x 16');
+INSERT INTO LOOKUP VALUES(50,'TYRESIZE','650 x 16');
+INSERT INTO LOOKUP VALUES(51,'TYRESIZE','13.28');
+
+ INSERT INTO LOOKUP VALUES(52,'TYREBRAND','APOLLO');
+ INSERT INTO LOOKUP VALUES(53,'TYREBRAND','MRF');
+ INSERT INTO LOOKUP VALUES(54,'TYREBRAND','GOODYEAR');
+ INSERT INTO LOOKUP VALUES(55,'TYREBRAND','JK');
+ INSERT INTO LOOKUP VALUES(56,'TYREBRAND','CEAT');
+ INSERT INTO LOOKUP VALUES(57,'TYREBRAND','BIRLA');
+
+ INSERT INTO LOOKUP VALUES(58,'TYREPLY','6');
+ INSERT INTO LOOKUP VALUES(59,'TYREPLY','8');
+ INSERT INTO LOOKUP VALUES(60,'TYREPLY','10');
+ INSERT INTO LOOKUP VALUES(61,'TYREPLY','12');
+ INSERT INTO LOOKUP VALUES(62,'TYREPLY','14');
+INSERT INTO LOOKUP VALUES(63,'TYREPLY','16');
+
+ INSERT INTO LOOKUP VALUES(64,'TYREPOSITION','FRONTLEFT');
+ INSERT INTO LOOKUP VALUES(65,'TYREPOSITION','FRONTRIGHT');
+ INSERT INTO LOOKUP VALUES(66,'TYREPOSITION','REARLEFTIN');
+ INSERT INTO LOOKUP VALUES(67,'TYREPOSITION','REARLEFTOUT');
+ INSERT INTO LOOKUP VALUES(68,'TYREPOSITION','REARRIGHTIN');
+ INSERT INTO LOOKUP VALUES(69,'TYREPOSITION','REARRIGHTOUT');
+
+insert into lookup values(70,'equipment1','Jockey');
+insert into lookup values(71,'equipment1','Lever');
+insert into lookup values(72,'equipment1','Pipe');
+insert into lookup values(73,'equipment1','Brush');
+insert into lookup values(74,'equipment1','Tutor');
+insert into lookup values(75,'equipment1','Watch');
+insert into lookup values(76,'equipment1','Mirror');
+insert into lookup values(77,'equipment2','ColorTubeLight');
+insert into lookup values(78,'equipment2','HeadLight');
+insert into lookup values(79,'equipment2','YellowLight');
+insert into lookup values(80,'equipment2','TubeLight');
+insert into lookup values(81,'equipment2','PilotFan');
+insert into lookup values(82,'equipment2','FirstAidBox');
+insert into lookup values(83,'equipment2','FanBelt');
+insert into lookup values(84,'equipment3','WheelSpanner');
+insert into lookup values(85,'equipment3','StepneyTyre');
+insert into lookup values(86,'equipment3','StepneyTyreCarrier');
+insert into lookup values(87,'equipment3','SamyPhoto');
+insert into lookup values(88,'equipment3','FireExtinguisher');
+insert into lookup values(89,'equipment3','TapeRecorder');
+insert into lookup values(90,'equipment3','BulbHorn');
+insert into lookup values(91,'equipment3','AirHorn');
+insert into lookup values(92,'equipment4','DVDPlayer');
+insert into lookup values(93,'equipment4','TV');
+insert into lookup values(94,'equipment4','Speaker');
+insert into lookup values(95,'equipment4','SpekerBox');
+insert into lookup values(96,'equipment4','MusicHorn');
+insert into lookup values(97,'equipment4','ElectricalHorn');
+
+insert into lookup values(98,'period','Quarterly');
+insert into lookup values(99,'period','Half Yearly');
+insert into lookup values(100,'period','Annual');
+
+INSERT INTO LOOKUP VALUES(101,'oilgrease','Oil');
+INSERT INTO LOOKUP VALUES(102,'oilgrease','Grease');
+
+INSERT INTO LOOKUP VALUES(103,'oilbrand','Servo');
+INSERT INTO LOOKUP VALUES(104,'greasebrand','Servo');
+
+INSERT INTO LOOKUP VALUES(105,'companyname','Aiswariya Lakshmi Auto Service');
+INSERT INTO LOOKUP VALUES(106,'companyname','Amman Service Station');
+INSERT INTO LOOKUP VALUES(107,'companyname','Angalam Engineering Industries');
+INSERT INTO LOOKUP VALUES(108,'companyname','Babu Painders');
+INSERT INTO LOOKUP VALUES(109,'companyname','Maruthi Coach');
+INSERT INTO LOOKUP VALUES(110,'companyname','Sundram Industries Ltd');
+INSERT INTO LOOKUP VALUES(111,'companyname','Thirumurugan Indus Works');
+INSERT INTO LOOKUP VALUES(112,'companyname','Sun Motor Coach Industries');
+
+INSERT INTO LOOKUP VALUES(113,'Aiswariya Lakshmi Auto Service','Erode');
+INSERT INTO LOOKUP VALUES(114,'Amman Service Station','Erode');
+INSERT INTO LOOKUP VALUES(115,'Angalam Engineering Industries','Perundurai');
+INSERT INTO LOOKUP VALUES(116,'Babu Painders','Gobi');
+INSERT INTO LOOKUP VALUES(117,'Maruthi Coach','Karur');
+INSERT INTO LOOKUP VALUES(118,'Sundram Industries Ltd','Salem');
+INSERT INTO LOOKUP VALUES(119,'Thirumurugan Indus Works','Perundurai');
+INSERT INTO LOOKUP VALUES(120,'Sun Motor Coach Industries','Erode');
+
+INSERT INTO LOOKUP VALUES(121,'PetrolCompany','HindustanPetroleum');
+ INSERT INTO LOOKUP VALUES(122,'PetrolCompany','BharatPetroleum');
+
+INSERT INTO LOOKUP VALUES(123,'bankname','Indian Bank');
+INSERT INTO LOOKUP VALUES(124,'bankname','State Bank Of India');
+
+INSERT INTO LOOKUP VALUES(125,'driverid','1');
+
+INSERT INTO LOOKUP VALUES(126,'fcreason','FC');
+INSERT INTO LOOKUP VALUES(127,'fcreason','SMOKE');
+
+INSERT INTO LOOKUP VALUES(128,'fueltype','Petrol');
+INSERT INTO LOOKUP VALUES(129,'fueltype','Diesel');
+
+INSERT INTO LOOKUP VALUES(130,'oiltype','40 Oil');
+INSERT INTO LOOKUP VALUES(131,'oiltype','140 Oil');
+INSERT INTO LOOKUP VALUES(132,'oiltype','15w40 Oil');
+INSERT INTO LOOKUP VALUES(133,'oiltype','80w90 Oil');
+INSERT INTO LOOKUP VALUES(134,'oiltype','TQ - Power Steering Oil');
+INSERT INTO LOOKUP VALUES(135,'oiltype','20 W/40-Engine Oil');
+
+
+INSERT INTO LOOKUP VALUES(136,'category','Steel');
+INSERT INTO LOOKUP VALUES(137,'category','Aluminium');
+INSERT INTO LOOKUP VALUES(138,'category','Brass');
+INSERT INTO LOOKUP VALUES(139,'category','Copper');
+INSERT INTO LOOKUP VALUES(140,'category','Rubber');
+INSERT INTO LOOKUP VALUES(141,'category','Plastic');
+INSERT INTO LOOKUP VALUES(142,'category','Bearing');
+INSERT INTO LOOKUP VALUES(143,'category','Clutch Blade');
+
+INSERT INTO LOOKUP VALUES(144,'oilreason','Oil Leakage');
+INSERT INTO LOOKUP VALUES(145,'oilreason','Oil Service');
+INSERT INTO LOOKUP VALUES(146,'oilreason','Tube Cut');
+INSERT INTO LOOKUP VALUES(147,'oilreason','Pump');
+
+INSERT INTO LOOKUP VALUES(148,'natureofwork','Paint');
+INSERT INTO LOOKUP VALUES(149,'natureofwork','Others');
+INSERT INTO LOOKUP VALUES(150,'natureofwork','Mechanic Work');
+
+INSERT INTO LOOKUP VALUES(151,'goodstype','SpareParts');
+INSERT INTO LOOKUP VALUES(152,'goodstype','Paint');
+INSERT INTO LOOKUP VALUES(153,'goodstype','Oil');
+INSERT INTO LOOKUP VALUES(154,'goodstype','Kerosene');
+INSERT INTO LOOKUP VALUES(155,'goodstype','Fuel');
+INSERT INTO LOOKUP VALUES(156,'goodstype','Grease');
+INSERT INTO LOOKUP VALUES(157,'goodstype','WasteCloth');
+INSERT INTO LOOKUP VALUES(158,'goodstype','General');
+INSERT INTO LOOKUP VALUES(159,'goodstype','Fc');
+INSERT INTO LOOKUP VALUES(160,'goodstype','Scrap');
+INSERT INTO LOOKUP VALUES(161,'goodstype','Service');
+INSERT INTO LOOKUP VALUES(162,'goodstype','Tyre');
+
+INSERT INTO LOOKUP VALUES(163,'generalnote','All Purpose general');
+INSERT INTO LOOKUP VALUES(164,'generalnote','Uniform');
+INSERT INTO LOOKUP VALUES(165,'generalnote','Pooja Materials');
+INSERT INTO LOOKUP VALUES(166,'generalnote','Tyre Rebuilt');
+
+INSERT INTO LOOKUP VALUES(167,'greasetype','All Purpose Grease');
+INSERT INTO LOOKUP VALUES(168,'greasetype','White Grease');
+INSERT INTO LOOKUP VALUES(169,'greasetype','Black Grease');
+
+ insert into lookup values(170,'greasereason','Wheel Grease');
+ insert into lookup values(171,'greasereason','Maintenance');
+
+ insert into lookup values(172,'passingbilltype','Purchase');
+ insert into lookup values(173,'passingbilltype','Issue');
+
+insert into lookup values(174,'vehiclenumber','TN27R2988');
+
+insert into lookup values(175,'bunkname','Annamar Petrol Bunk');
+insert into lookup values(176,'bunkname','Erode Petrol Bunk');
+insert into lookup values(177,'bunkname','Chitra Petrol Bunk');
+
+insert into lookup values(178,'Annamar Petrol Bunk','Perundurai');
+insert into lookup values(179,'Erode Petrol Bunk','Erode');
+insert into lookup values(180,'Chitra Petrol Bunk','Kollampalayam');
+
+INSERT INTO LOOKUP VALUES(181,'licencecategory','LMV');
+INSERT INTO LOOKUP VALUES(182,'licencecategory','HMV');
+INSERT INTO LOOKUP VALUES(183,'licencecategory','HPV');
+INSERT INTO LOOKUP VALUES(184,'licencecategory','HTV');
+INSERT INTO LOOKUP VALUES(185,'licencecategory','TPT');
+
+INSERT INTO LOOKUP VALUES(186,'endorsement','1');
+INSERT INTO LOOKUP VALUES(187,'endorsement','2');
+INSERT INTO LOOKUP VALUES(188,'endorsement','3');
+INSERT INTO LOOKUP VALUES(189,'endorsement','4');
+INSERT INTO LOOKUP VALUES(190,'endorsement','5');
+
+INSERT INTO LOOKUP VALUES(191,'kerosenecloth','Kerosene');
+INSERT INTO LOOKUP VALUES(192,'kerosenecloth','Cloth');
+
+INSERT INTO LOOKUP VALUES(193,'paintname','Asian');
+INSERT INTO LOOKUP VALUES(194,'paintname','Nerolac');
+INSERT INTO LOOKUP VALUES(195,'Asian','White');
+INSERT INTO LOOKUP VALUES(196,'Nerolac','Green');
+

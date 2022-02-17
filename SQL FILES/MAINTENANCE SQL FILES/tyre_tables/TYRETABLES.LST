@@ -1,0 +1,624 @@
+SQL> CREATE TABLE TYRE_MASTER(TYREID NUMBER,TYRESIZE VARCHAR2(20),TYREPLY VARCHAR2(20
+  2  ),TYREBRAND VARCHAR2(20));
+
+Table created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(15,'tyreposition','frontleft');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(16,'tyreposition','frontright');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(17,'tyreposition','rearleft');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(18,'tyreposition','rearright');
+
+1 row created.
+
+SQL> select *from lookup where ctype='tyreposition';
+
+no rows selected
+
+SQL> delete from tyrelookup where ctype='tyreposition';
+
+4 rows deleted.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(15,'tyreposition','frontleft');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(16,'tyreposition','frontright');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(17,'tyreposition','rearleftin');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(18,'tyreposition','rearleftout');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(19,'tyreposition','rearrightin');
+
+1 row created.
+
+SQL> INSERT INTO TYRELOOKUP VALUES(20,'tyreposition','rearrightout');
+
+1 row created.
+
+SQL> select * from tyrelookup;
+
+      CODE CTYPE           CDESC                                                
+---------- --------------- --------------------                                 
+         1 tyresize        750 x 16                                             
+         2 tyresize        1000 x 20                                            
+         3 tyresize        900 x 20                                             
+         4 tyrebrand       apollo                                               
+         5 tyrebrand       mrf                                                  
+         6 tyrebrand       GoodYear                                             
+         7 tyrebrand       jk                                                   
+         8 tyrebrand       ceat                                                 
+         9 tyrebrand       birla                                                
+        10 tyreply         6                                                    
+        11 tyreply         8                                                    
+
+      CODE CTYPE           CDESC                                                
+---------- --------------- --------------------                                 
+        12 tyreply         10                                                   
+        13 tyreply         12                                                   
+        14 tyreply         14                                                   
+        15 tyreposition    frontleft                                            
+        16 tyreposition    frontright                                           
+        17 tyreposition    rearleftin                                           
+        18 tyreposition    rearleftout                                          
+        19 tyreposition    rearrightin                                          
+        20 tyreposition    rearrightout                                         
+
+20 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> drop table tyre;
+
+Table dropped.
+
+SQL> create table tyrepurchase(tyrebrand number,tyreply number,tyresize number,tyrenumber varchar2(20));
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber');
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R131293 May 05
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R131293 May 05')
+
+1 row created.
+
+SQL> /
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R140258 Jul 05'
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R140258 Jul 05'')
+ERROR:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> /
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R140258 Jul 05
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R140258 Jul 05')
+
+1 row created.
+
+SQL> /
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R171152 May 05
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R171152 May 05')
+
+1 row created.
+
+SQL> /
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R200317 May 05
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R200317 May 05')
+
+1 row created.
+
+SQL> 
+SQL> /
+Enter value for tyrebrand: 4
+Enter value for tyreply: 10
+Enter value for tyresize: 1
+Enter value for tyrenumber: R200352 May 05
+old   1: insert into tyrepurchase values(&tyrebrand,&tyreply,&tyresize,'&tyrenumber')
+new   1: insert into tyrepurchase values(4,10,1,'R200352 May 05')
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R070919 Mar 05');
+
+1 row created.
+
+
+SQL> insert into tyrepurchase values(4,10,1,'R141257 Jul 05');
+
+1 row created.
+
+
+SQL> insert into tyrepurchase values(4,10,1,'R1602025 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R131293 May 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R131313 May 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R170984 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R170212 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R141225 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R140276 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,1,'R170981 Jul 05');
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> insert into tyrepurchase values(4,10,2,'K181442 Dec 00');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,2,'R044623 Feb 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,2,'RX10649 Jul 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,2,'A200118 Oct 02');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,2,'A200124 Oct 02');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'M202764 Sep 04');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'M222929 May 04');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'A080297 Jun 02');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'B072101 Oct 06');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'U274695 Oct 05');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(4,10,3,'R024440 Nov 05');
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> insert into tyrepurchase values(9,10,3,'T66855 Nov 01');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(8,10,2,'AY 5456851L');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(8,10,2,'AY 331151');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(8,10,2,'AY 3210451L');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(8,10,2,'AY 3686851L');
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> insert into tyrepurchase values(6,10,1,'07732 0605');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(6,10,1,'07777 0605');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(6,10,2,'B406911104');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(6,10,2,'B403291104');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(7,10,2,'V073603 Be');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(7,10,2,'W002521 SF');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(5,10,2,'57001383841');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(5,10,2,'30328073032');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(5,10,3,'30876256873');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(5,10,3,'30125600599');
+
+1 row created.
+
+SQL> insert into tyrepurchase values(5,10,3,'30497834506');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> select * from tyrepurchase;
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER                                     
+---------- ---------- ---------- --------------------                           
+         4         10          1 R200352 May 05                                 
+         4         10          1 R141257 Jul 05                                 
+         4         10          1 R140258 Jul 05                                 
+         4         10          1 R171152 May 05                                 
+         4         10          1 R200317 May 05                                 
+         9         10          3 T66855 Nov 01                                  
+         4         10          1 R070919 Mar 05                                 
+         4         10          1 R131293 May 05                                 
+         4         10          1 R131313 May 05                                 
+         4         10          1 R170984 Jul 05                                 
+         4         10          1 R170212 Jul 05                                 
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER                                     
+---------- ---------- ---------- --------------------                           
+         4         10          1 R141225 Jul 05                                 
+         4         10          1 R140276 Jul 05                                 
+         4         10          1 R170981 Jul 05                                 
+         8         10          2 AY 3686851L                                    
+         4         10          1 R131293 May 05                                 
+         4         10          1 R1602025 Jul 05                                
+         4         10          2 K181442 Dec 00                                 
+         4         10          2 R044623 Feb 05                                 
+         4         10          2 RX10649 Jul 05                                 
+         4         10          2 A200118 Oct 02                                 
+         4         10          2 A200124 Oct 02                                 
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER                                     
+---------- ---------- ---------- --------------------                           
+         4         10          3 M202764 Sep 04                                 
+         4         10          3 M222929 May 04                                 
+         4         10          3 A080297 Jun 02                                 
+         4         10          3 B072101 Oct 06                                 
+         4         10          3 U274695 Oct 05                                 
+         4         10          3 R024440 Nov 05                                 
+         8         10          2 AY 5456851L                                    
+         8         10          2 AY 331151                                      
+         8         10          2 AY 3210451L                                    
+         6         10          1 07732 0605                                     
+         6         10          1 07777 0605                                     
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER                                     
+---------- ---------- ---------- --------------------                           
+         6         10          2 B406911104                                     
+         6         10          2 B403291104                                     
+         7         10          2 V073603 Be                                     
+         7         10          2 W002521 SF                                     
+         5         10          2 57001383841                                    
+         5         10          2 30328073032                                    
+         5         10          3 30876256873                                    
+         5         10          3 30125600599                                    
+         5         10          3 30497834506                                    
+
+42 rows selected.
+
+
+
+SQL> alter table tyrepurchase add(tyrestatus varchar2(20),fit_indicator varchar2(1));
+
+Table altered.
+
+SQL> update tyrepurchase set tyrestatus='original' where tyreply=10;
+
+42 rows updated.
+
+SQL> update tyrepurchase set fit_indicator='n' where tyreply=10;
+
+42 rows updated.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tyrepurchase;
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F    
+---------- ---------- ---------- -------------------- -------------------- -    
+         4         10          1 R200352 May 05       original             n    
+         4         10          1 R141257 Jul 05       original             n    
+         4         10          1 R140258 Jul 05       original             n    
+         4         10          1 R171152 May 05       original             n    
+         4         10          1 R200317 May 05       original             n    
+         9         10          3 T66855 Nov 01        original             n    
+         4         10          1 R070919 Mar 05       original             n    
+         4         10          1 R131293 May 05       original             n    
+         4         10          1 R131313 May 05       original             n    
+         4         10          1 R170984 Jul 05       original             n    
+         4         10          1 R170212 Jul 05       original             n    
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F    
+---------- ---------- ---------- -------------------- -------------------- -    
+         4         10          1 R141225 Jul 05       original             n    
+         4         10          1 R140276 Jul 05       original             n    
+         4         10          1 R170981 Jul 05       original             n    
+         8         10          2 AY 3686851L          original             n    
+         4         10          1 R131293 May 05       original             n    
+         4         10          1 R1602025 Jul 05      original             n    
+         4         10          2 K181442 Dec 00       original             n    
+         4         10          2 R044623 Feb 05       original             n    
+         4         10          2 RX10649 Jul 05       original             n    
+         4         10          2 A200118 Oct 02       original             n    
+         4         10          2 A200124 Oct 02       original             n    
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F    
+---------- ---------- ---------- -------------------- -------------------- -    
+         4         10          3 M202764 Sep 04       original             n    
+         4         10          3 M222929 May 04       original             n    
+         4         10          3 A080297 Jun 02       original             n    
+         4         10          3 B072101 Oct 06       original             n    
+         4         10          3 U274695 Oct 05       original             n    
+         4         10          3 R024440 Nov 05       original             n    
+         8         10          2 AY 5456851L          original             n    
+         8         10          2 AY 331151            original             n    
+         8         10          2 AY 3210451L          original             n    
+         6         10          1 07732 0605           original             n    
+         6         10          1 07777 0605           original             n    
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F    
+---------- ---------- ---------- -------------------- -------------------- -    
+         6         10          2 B406911104           original             n    
+         6         10          2 B403291104           original             n    
+         7         10          2 V073603 Be           original             n    
+         7         10          2 W002521 SF           original             n    
+         5         10          2 57001383841          original             n    
+         5         10          2 30328073032          original             n    
+         5         10          3 30876256873          original             n    
+         5         10          3 30125600599          original             n    
+         5         10          3 30497834506          original             n    
+
+42 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tyrelookup;
+
+      CODE CTYPE           CDESC                                                
+---------- --------------- --------------------                                 
+         1 tyresize        750 x 16                                             
+         2 tyresize        1000 x 20                                            
+         3 tyresize        900 x 20                                             
+         4 tyrebrand       apollo                                               
+         5 tyrebrand       mrf                                                  
+         6 tyrebrand       GoodYear                                             
+         7 tyrebrand       jk                                                   
+         8 tyrebrand       ceat                                                 
+         9 tyrebrand       birla                                                
+        10 tyreply         6                                                    
+        11 tyreply         8                                                    
+
+      CODE CTYPE           CDESC                                                
+---------- --------------- --------------------                                 
+        12 tyreply         10                                                   
+        13 tyreply         12                                                   
+        14 tyreply         14                                                   
+        15 tyreposition    frontleft                                            
+        16 tyreposition    frontright                                           
+        17 tyreposition    rearleftin                                           
+        18 tyreposition    rearleftout                                          
+        19 tyreposition    rearrightin                                          
+        20 tyreposition    rearrightout                                         
+
+20 rows selected.
+
+SQL> desc tyrefitting;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TYRESIZE                                           VARCHAR2(20)
+ TYREBRAND                                          VARCHAR2(20)
+ TYREPLY                                            VARCHAR2(20)
+ TYRENUMBER                                         VARCHAR2(20)
+ INSTITUTIONNAME                                    VARCHAR2(20)
+ VEHICLETYPE                                        VARCHAR2(20)
+ VEHICLENUMBER                                      VARCHAR2(20)
+ TYREPOSITION                                       VARCHAR2(20)
+ TYRESTATUS                                         VARCHAR2(10)
+ FITTINDATE                                         DATE
+ FITTINGKM                                          VARCHAR2(10)
+ DINDICATOR                                         VARCHAR2(4)
+
+SQL> desc tyreremoval;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INSTITUTIONNAME                                    VARCHAR2(20)
+ VEHICLETYPE                                        VARCHAR2(20)
+ VEHICLENUMBER                                      VARCHAR2(20)
+ TYRENUMBER                                         VARCHAR2(20)
+ TYRESTATUS                                         VARCHAR2(20)
+ TYREPOSITION                                       VARCHAR2(20)
+ REMOVALDATE                                        DATE
+ FITTINGKM                                          VARCHAR2(10)
+ REMOVALKM                                          VARCHAR2(10)
+ TOTALKM                                            VARCHAR2(10)
+ REMOVALREASON                                      VARCHAR2(20)
+
+SQL> alter table tyrepurchase add(use_indicator varchar2(1));
+
+Table altered.
+
+SQL> update tyrepurchase set use_indicator='y';
+
+42 rows updated.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tyrepurchase;
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F U  
+---------- ---------- ---------- -------------------- -------------------- - -  
+         4         10          1 R200352 May 05       original             n y  
+         4         10          1 R141257 Jul 05       original             n y  
+         4         10          1 R140258 Jul 05       original             n y  
+         4         10          1 R171152 May 05       original             n y  
+         4         10          1 R200317 May 05       original             n y  
+         9         10          3 T66855 Nov 01        original             n y  
+         4         10          1 R070919 Mar 05       original             n y  
+         4         10          1 R131293 May 05       original             n y  
+         4         10          1 R131313 May 05       original             n y  
+         4         10          1 R170984 Jul 05       original             n y  
+         4         10          1 R170212 Jul 05       original             n y  
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F U  
+---------- ---------- ---------- -------------------- -------------------- - -  
+         4         10          1 R141225 Jul 05       original             n y  
+         4         10          1 R140276 Jul 05       original             n y  
+         4         10          1 R170981 Jul 05       original             n y  
+         8         10          2 AY 3686851L          original             n y  
+         4         10          1 R131293 May 05       original             n y  
+         4         10          1 R1602025 Jul 05      original             n y  
+         4         10          2 K181442 Dec 00       original             n y  
+         4         10          2 R044623 Feb 05       original             n y  
+         4         10          2 RX10649 Jul 05       original             n y  
+         4         10          2 A200118 Oct 02       original             n y  
+         4         10          2 A200124 Oct 02       original             n y  
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F U  
+---------- ---------- ---------- -------------------- -------------------- - -  
+         4         10          3 M202764 Sep 04       original             n y  
+         4         10          3 M222929 May 04       original             n y  
+         4         10          3 A080297 Jun 02       original             n y  
+         4         10          3 B072101 Oct 06       original             n y  
+         4         10          3 U274695 Oct 05       original             n y  
+         4         10          3 R024440 Nov 05       original             n y  
+         8         10          2 AY 5456851L          original             n y  
+         8         10          2 AY 331151            original             n y  
+         8         10          2 AY 3210451L          original             n y  
+         6         10          1 07732 0605           original             n y  
+         6         10          1 07777 0605           original             n y  
+
+ TYREBRAND    TYREPLY   TYRESIZE TYRENUMBER           TYRESTATUS           F U  
+---------- ---------- ---------- -------------------- -------------------- - -  
+         6         10          2 B406911104           original             n y  
+         6         10          2 B403291104           original             n y  
+         7         10          2 V073603 Be           original             n y  
+         7         10          2 W002521 SF           original             n y  
+         5         10          2 57001383841          original             n y  
+         5         10          2 30328073032          original             n y  
+         5         10          3 30876256873          original             n y  
+         5         10          3 30125600599          original             n y  
+         5         10          3 30497834506          original             n y  
+
+42 rows selected.
+
+SQL> create table common_tyretransaction(jobid number primary key,transaction_date date,incharge_name varchar2(20),rebuilt_repair varchar2(20),company_name varchar2(25),bill_number varchar2(10));
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> desc common_tyretransaction;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ JOBID                                     NOT NULL NUMBER
+ TRANSACTION_DATE                                   DATE
+ INCHARGE_NAME                                      VARCHAR2(20)
+ REBUILT_REPAIR                                     VARCHAR2(20)
+ COMPANY_NAME                                       VARCHAR2(25)
+ BILL_NUMBER                                        VARCHAR2(10)
+
+SQL> alter table common_tyretransaction modify(rebuilt_repair varchar2(10));
+
+Table altered.
+
+SQL> create table tyre_transaction(jobid number,tyrenumber varchar2(20),rebuilt_repair varchar2(20),reason varchar2(20),constraint pk primary key(jobid,tyrenumber));
+
+Table created.
+

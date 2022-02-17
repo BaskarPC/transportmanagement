@@ -1,0 +1,17 @@
+select distinct(pid) from STORE_COMMON_TRANSACTION where type='spare';
+
+SELECT FLAG,AMOUNT,QTY_PURCHASED FROM STORE_COMMON_TRANSACTION WHERE PID=1 ORDER BY FLAG ASC;
+
+
+
+insert into STORE_COMMON_TRANSACTION values(2,34,240,345,20,400,200,2200,22000,'spare',0,'n');
+
+
+insert into STORE_COMMON_TRANSACTION values(1,23,560,200,20,400,200,1000,10000,'spare',1,'n');
+insert into STORE_COMMON_TRANSACTION values(1,34,430,345,20,400,200,2200,22000,'spare',0,'n');
+
+insert into STORE_COMMON_TRANSACTION values(3,457,265,211,22,100,200,6200,4630,'spare',0,'n');
+alter table STORE_COMMON_TRANSACTION add indicator varchar2(4);
+
+
+ alter table STORE_COMMON_TRANSACTION add flag number;

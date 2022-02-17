@@ -1,0 +1,11 @@
+ CREATE TABLE SPAREPARTS_PAINT(JOB_ID NUMBER(6),   
+                            PART_NUMBER NUMBER(6),
+	        BRAND_NAME NUMBER(6),
+                            ITEM_TYPE NUMBER(6),
+                            AVAILABLE_QTY NUMBER(6),
+                            QTY_WANTED NUMBER(6),
+                            IQTY_OLD NUMBER(6),
+                            IQTY_NEW NUMBER(6),
+                            URATE_OLD NUMBER(8,2),
+                            URATE_NEW NUMBER(8,2),
+                            AMOUNT NUMBER(10,2));

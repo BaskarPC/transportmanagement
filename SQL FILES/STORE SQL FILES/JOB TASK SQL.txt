@@ -1,0 +1,5 @@
+INSERT INTO JOBATTRIBUTE1 VALUES('KeroseneClothRequisitionForm',3,15);
+
+insert into taskattribute1 values(15,'approve');
+insert into taskattribute1 values(15,'issue');
+insert into taskattribute1 values(15,'purchase');

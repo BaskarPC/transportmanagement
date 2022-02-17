@@ -1,0 +1,46 @@
+ insert into tyremaster values(52,58,45,'R070919 Mar 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R141257 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R1602025 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R131293 May 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R131313 May 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R170984 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R170212 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R141225 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R140276 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,45,'R170981 Jul 05','ORIGINAL','N','Y');
+
+ insert into tyremaster values(52,58,46,'K181442 Dec 00','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,46,'R044623 Feb 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,46,'RX10649 Jul 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,46,'A200118 Oct 02','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,46,'A200124 Oct 02','ORIGINAL','N','Y');
+
+ insert into tyremaster values(52,58,47,'M202764 Sep 04','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,47,'M222929 May 04','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,47,'A080297 Jun 02','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,47,'B072101 Oct 06','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,47,'U274695 Oct 05','ORIGINAL','N','Y');
+ insert into tyremaster values(52,58,47,'R024440 Nov 05','ORIGINAL','N','Y');
+
+ insert into tyremaster values(57,58,47,'T66855 Nov 01','ORIGINAL','N','Y');
+ insert into tyremaster values(56,58,46,'AY 5456851L','ORIGINAL','N','Y');
+ insert into tyremaster values(56,58,46,'AY 331151','ORIGINAL','N','Y');
+ insert into tyremaster values(56,58,46,'AY 3210451L','ORIGINAL','N','Y');
+ insert into tyremaster values(56,58,46,'AY 3686851L','ORIGINAL','N','Y');
+
+ insert into tyremaster values(54,58,45,'07732 0605','ORIGINAL','N','Y');
+ insert into tyremaster values(54,58,45,'07777 0605','ORIGINAL','N','Y');
+
+ insert into tyremaster values(54,58,46,'B406911104','ORIGINAL','N','Y');
+ insert into tyremaster values(54,58,46,'B403291104','ORIGINAL','N','Y');
+
+ insert into tyremaster values(55,58,46,'V073603 Be','ORIGINAL','N','Y');
+ insert into tyremaster values(55,58,46,'W002521 SF','ORIGINAL','N','Y');
+
+ insert into tyremaster values(53,58,46,'57001383841','ORIGINAL','N','Y');
+ insert into tyremaster values(53,58,46,'30328073032','ORIGINAL','N','Y');
+
+ insert into tyremaster values(53,58,47,'30876256873','ORIGINAL','N','Y');
+ insert into tyremaster values(53,58,47,'30125600599','ORIGINAL','N','Y');
+ insert into tyremaster values(53,58,47,'30497834506','ORIGINAL','N','Y');
+

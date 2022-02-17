@@ -1,0 +1,1 @@
+create table lookup(code number(6),ctype varchar2(100),cdesc varchar2(200));
