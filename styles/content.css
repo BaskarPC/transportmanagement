@@ -1,0 +1,200 @@
+body, select, input, textarea {
+	background: #FFFFFF;
+	color: #000000;
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 9pt;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.line {
+	background: #000000;
+}
+
+.maintitle {
+	font-size: 2pt;
+	font-weight: normal;
+}
+
+.subtitle {
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.small {
+	font-family: arial;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+ A, A.link, A.visited,A.hover {
+	color: #003296;
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+A.tableSorter {
+	background: #006666;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+Input {
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 9pt;
+}
+
+Input.day {
+	width: 15pt;
+}
+
+Input.short {
+	width: 30pt;
+}
+
+Input.medium {
+	width:100pt;
+}
+
+Input.long {
+	width: 150pt;
+}
+
+Input.xlong {
+	width: 200pt;
+}
+
+Input.white {
+	background: #FFFFFF
+}
+
+Input.green {
+	background: #B2DDDC
+}
+
+.invisibleField {
+	padding: 0px;
+	border-width: 0px;
+	border-style: none;
+	border-color: #FFFFFF;
+	border: 0px;
+	color: #000000;
+	text-decoration: none;
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 9pt;
+}
+
+Select.short {
+	width: 30pt;
+}
+
+Select.medium {
+	width:100pt;
+}
+
+Select.long {
+	width: 150pt;
+}
+
+Select.xlong {
+	width: 200pt;
+}
+
+Select.xxlong {
+	font-family: arial, helvetica, verdana, sans-serif;
+	font-size: 8pt;
+}
+
+td {
+	font-family: arial, helvetica, verdana, sans-serif;
+    font-size: 9pt;
+	font-weight: normal;
+	padding: 0pt;
+}
+
+td.header {
+	background: #6ABCBE;
+	color: Black;
+	font-weight: bold;
+}
+.sample {
+	
+	background: #6ABCBE;
+	color: Black;
+	font-weight: bold;
+}
+td.white {
+	background : #FFFFFF;
+	color : #000000;
+}
+
+td.green {
+	background : #B2DDDC;
+	color : #000000;
+	
+}
+
+td.error {
+	background : #000000;
+	color : #FFFFFF;
+	font-weight: bold;
+}
+
+tr.white {
+	background : #FFFFFF;
+	color : #000000;
+}
+
+tr.green {
+	background : #B2DDDC;
+	color : #000000;
+}
+.ValueTab
+{
+BACKGROUND: #D9E8D7;
+	COLOR: #00000;
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;
+	FONT-SIZE: 9pt;
+	FONT-WEIGHT:bold;
+}
+.ClientDet
+{
+	COLOR: #00000;
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;
+	FONT-SIZE: 9pt;
+	FONT-WEIGHT:bold;
+}
+.TaskDet
+{
+	COLOR:  #00000;
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;
+	FONT-SIZE: 9pt;
+	
+}
+.TaskHed
+{
+	COLOR: #FFFFFF;
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;
+	FONT-SIZE: 9pt;
+	FONT-WEIGHT:bold;
+}
+td.errormes {
+	background : #000000;
+	color : #FFFFFF;
+	font-family: arial;	
+ 	font-size: 9pt;
+	font-weight:bold;
+}

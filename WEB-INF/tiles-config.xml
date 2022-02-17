@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_3.dtd">
+<tiles-definitions>
+   <!-- Details About HomeLayout-->
+ <definition name="Layout.without.menu" path="/layouts/HomeLayout.jsp">
+	<put name="header" value="/include/Header.jsp"/><!-- header jsp page  -->
+    <put name="footer" value="/include/footer.jsp"/><!-- footer jsp page  -->
+	<put name="copyright" value="/include/copyright.jsp"/><!-- copyright jsp page  -->
+      <putList name="styles"><!-- stylesheet  -->
+            <add value="/styles/header.css"/>
+            <add value="/styles/content.css"/>
+		 	<add value="/styles/body.css"/> 
+		 	<add value="/styles/footer.css"/> 
+        </putList>       
+    </definition>
+ 
+<!-- Base layout definition with menu -->
+    <definition name="Layout.with.menu" path="/layouts/BaseLayout.jsp">    
+    <put name="titleKey"/><!-- page title -->       
+        <put name="header" value="/include/Header.jsp"/><!-- header jsp page  -->
+		<put name="menu" value="/include/menu.jsp"/><!-- menu jsp page  -->       
+        <put name="footer" value="/include/footer.jsp"/><!-- footer jsp page  -->
+	    <put name="copyright" value="/include/copyright.jsp"/><!-- copyright jsp page  -->
+          <putList name="styles"><!-- stylesheet  -->
+            <add value="/styles/header.css"/>
+            <add value="/styles/content.css"/>
+		 	<add value="/styles/body.css"/> 
+		 	<add value="/styles/footer.css"/> 
+        </putList>       
+    </definition>
+
+	<!-- Home Page-->
+	<definition name="/display.login" extends="Layout.without.menu">
+        <put name="titleKey"  value="login.titleKey"/>
+        <put name="content" value="/jsp/login.jsp"/>
+    </definition> 
+    
+	<definition name="/display.spare" extends="Layout.with.menu">
+        <put name="titleKey"  value="login.titleKey"/>
+        <put name="content" value="/jsp/spareparts.jsp"/>
+    </definition> 
+    
+   	<definition name="/display.diesel" extends="Layout.with.menu">
+	         <put name="titleKey" value="diesel.title"/>
+              <put name="content" value="/jsp/diesel.jsp"/>
+   	 </definition> 
+   	 
+   	  <definition name="/display.dieseloutside" extends="Layout.with.menu">
+	         <put name="titleKey" value="dieseloutside.title"/>
+              <put name="content" value="/jsp/dieseloutside.jsp"/>
+   	 </definition> 
+   	 
+   	   <definition name="/display.kerosene" extends="Layout.with.menu">
+	         <put name="titleKey" value="kerosene.title"/>
+              <put name="content" value="/jsp/kerosene.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.grease" extends="Layout.with.menu">
+	         <put name="titleKey" value="grease.title"/>
+              <put name="content" value="/jsp/grease.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.oil" extends="Layout.with.menu">
+	         <put name="titleKey" value="oil.title"/>
+              <put name="content" value="/jsp/oil.jsp"/>
+         
+              
+   	 </definition>
+   	 <definition name="/display.paint" extends="Layout.with.menu">
+	         <put name="titleKey" value="paint.title"/>
+              <put name="content" value="/jsp/paint.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.passingbill" extends="Layout.with.menu">
+	         <put name="titleKey" value="passingbill.title"/>
+              <put name="content" value="/jsp/passingbill.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.labourcharge" extends="Layout.with.menu">
+	         <put name="titleKey" value="labourcharge.title"/>
+              <put name="content" value="/jsp/labourcharge.jsp"/>
+              
+   	 </definition>
+   	 
+   	 <definition name="/display.wastecloth" extends="Layout.with.menu">
+	         <put name="titleKey" value="wastecloth.title"/>
+              <put name="content" value="/jsp/wastecloth.jsp"/>
+   	 </definition>
+   	                 	              
+   	  <definition name="/display.service" extends="Layout.with.menu">
+	         <put name="titleKey" value="service.title"/>
+              <put name="content" value="/jsp/service.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.servicerequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="servicerequisition.title"/>
+              <put name="content" value="/jsp/servicerequisition.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.scrapmaintenance" extends="Layout.with.menu">
+	         <put name="titleKey" value="scrapmaintenance.title"/>
+              <put name="content" value="/jsp/scrapmaintenance.jsp"/>
+   	 </definition>
+   	
+   	  <definition name="/display.issuereturn" extends="Layout.with.menu">
+	         <put name="titleKey" value="issuereturn.title"/>
+              <put name="content" value="/jsp/issuereturn.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.fc" extends="Layout.with.menu">
+	         <put name="titleKey" value="fc.title"/>
+              <put name="content" value="/jsp/fcsmoketest.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.generalnote" extends="Layout.with.menu">
+	         <put name="titleKey" value="generalnote.title"/>
+              <put name="content" value="/jsp/generalnote.jsp"/>
+              
+   	 </definition>
+   	 <definition name="/display.scrapissue" extends="Layout.with.menu">
+	         <put name="titleKey" value="scrapissue.title"/>
+              <put name="content" value="/jsp/scrapissue.jsp"/>
+   	 </definition>
+   	 
+   	 	 
+   	  <definition name="/display.tyreremoval" extends="Layout.with.menu">
+	         <put name="titleKey" value="tyreremoval.title"/>
+              <put name="content" value="/jsp/tyreremoval.jsp"/>
+   	 </definition> 
+   	 
+   
+   	 <definition name="/display.rebuilt" extends="Layout.with.menu">
+	 	<put name="titleKey" value="rebuilt.title"/>
+     	<put name="content" value="/jsp/tyrerebuilt.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.rebuiltrequisition" extends="Layout.with.menu">
+	 	<put name="titleKey" value="rebuiltrequisition.title"/>
+     	<put name="content" value="/jsp/tyrerebuiltrequisition.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.repairrequisition" extends="Layout.with.menu">
+	 	<put name="titleKey" value="repairrequisition.title"/>
+     	<put name="content" value="/jsp/tyrerepairworkrequisition.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.tyrerepair" extends="Layout.with.menu">
+	 	<put name="titleKey" value="tyrerepair.title"/>
+     	<put name="content" value="/jsp/tyrerepairwork.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.condemntyre" extends="Layout.with.menu">
+		<put name="titleKey" value="condemntyre.title"/>
+     	<put name="content" value="/jsp/condemntyre.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.tyrefitting" extends="Layout.with.menu">
+	 <put name="titleKey" value="tyrefitting.title"/>
+     <put name="content" value="/jsp/tyrefitting.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name=".display.login" extends="Layout.with.menu">
+        <put name="titleKey"  value="login.title"/>
+        <put name="content" value="/include/content.jsp"/>
+    </definition> 
+	
+	<definition name=".display.driverpersonal" extends="Layout.with.menu">
+        <put name="titleKey"  value="driverpersonal.title"/>
+        <put name="content" value="/jsp/driverpersonal.jsp"/>
+    </definition>
+    
+    <definition name=".display.driverofficial" extends="Layout.with.menu">
+        <put name="titleKey"  value="driverofficial.title"/>
+        <put name="content" value="/jsp/driverofficial.jsp"/>
+    </definition> 
+    
+     <definition name=".display.driverlicence" extends="Layout.with.menu">
+        <put name="titleKey"  value="driverlicence.title"/>
+        <put name="content" value="/jsp/driverlicence.jsp"/>
+    </definition> 
+    
+     <definition name=".display.driverpolicy" extends="Layout.with.menu">
+        <put name="titleKey"  value="driverpolicy.title"/>
+        <put name="content" value="/jsp/driverpolicy.jsp"/>
+    </definition> 
+    
+     <definition name=".display.driverleave" extends="Layout.with.menu">
+        <put name="titleKey"  value="driverleave.title"/>
+        <put name="content" value="/jsp/driverleave.jsp"/>
+    </definition> 
+    
+     
+        <definition name=".display.vehicledetails" extends="Layout.with.menu">
+        <put name="titleKey"  value="vehicledetails.title"/>
+        <put name="content" value="/jsp/vehicledetails.jsp"/>
+    </definition> 
+    
+     <definition name=".display.busallotment" extends="Layout.with.menu">
+        <put name="titleKey"  value="busallotment.title"/>
+        <put name="content" value="/jsp/busallotment.jsp"/>
+    </definition> 
+    
+     <definition name=".display.roadtax" extends="Layout.with.menu">
+        <put name="titleKey"  value="roadtax.title"/>
+       <!-- <put name="errorKey" value="label.error.msg"/> -->
+        <put name="content" value="/jsp/roadtax.jsp"/>
+    </definition> 
+    
+     <definition name=".display.vehicleinsurance" extends="Layout.with.menu">
+        <put name="titleKey"  value="vehicleinsurance.title"/>
+        <put name="content" value="/jsp/vehicleinsurance.jsp"/>
+    </definition> 
+    
+     <definition name=".display.accident" extends="Layout.with.menu">
+        <put name="titleKey"  value="accident.title"/>
+        <put name="content" value="/jsp/accident.jsp"/>
+    </definition> 
+    
+     <definition name=".display.breakdown" extends="Layout.with.menu">
+        <put name="titleKey"  value="breakdown.title"/>
+        <put name="content" value="/jsp/breakdown.jsp"/>
+    </definition> 
+    
+    <definition name=".display.equipmentallotment" extends="Layout.with.menu">
+        <put name="titleKey"  value="equipmentallotment.title"/>
+        <put name="content" value="/jsp/equipmentallotment.jsp"/>
+    </definition> 
+    
+    <definition name=".display.equipmentdetails" extends="Layout.with.menu">
+        <put name="titleKey"  value="equipmentdetails.title"/>
+        <put name="content" value="/jsp/equipmentdetails.jsp"/>
+    </definition> 
+         
+     <definition name="/display.generalnotepurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/generalnotepurchase.jsp"/>
+   	 </definition> 
+   	 
+   	 <definition name="/display.oilgreasepurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/oilgreasepurchase.jsp"/>
+   	 </definition> 
+   	 <definition name="/display.orderFromEO" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/dieselorderfromEO.jsp"/>
+   	 </definition> 
+   	 <definition name="/display.dieselrequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/dieselrequisition.jsp"/>
+   	 </definition>
+   	  <definition name="/display.tyrerequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/tyrerequisition.jsp"/>
+   	 </definition> 
+   	 
+   	 <definition name="/display.generalnoterequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/generalnoterequisition .jsp"/>
+   	 </definition>
+   	 
+   	  <definition name="/display.keroseneclothrequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/keroseneclothrequisition.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.dieselpurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/dieselpurchase.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.paintsparepartspurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/paintsparepartspurchase.jsp"/>
+   	 </definition>
+   	 
+   	 	 <definition name="/display.paintsparepartsrequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/paintsparepartsrequisition.jsp"/>
+   	 </definition>
+   	 
+   	 <definition name="/display.oilgreaserequisition" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/oilgreaserequisition.jsp"/>
+   	 </definition>
+   	 
+   	 
+   	 <definition name="/display.keroseneclothpurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/keroseneclothpurchase.jsp"/>
+   	 </definition>
+   	 
+   	  <definition name="/display.tyrepurchase" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/tyrepurchase.jsp"/>
+   	 </definition> 
+   	 
+   	 
+   	  <definition name="/display.outdiesel" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/jsp/outsidediesel.jsp"/>
+   	 </definition> 
+   	 
+   	  <definition name="/display.inbox" extends="Layout.with.menu">
+	         <put name="titleKey" value="hai"/>
+              <put name="content" value="/include/inbox.jsp"/>
+   	 </definition> 
+   	 
+   </tiles-definitions>
+

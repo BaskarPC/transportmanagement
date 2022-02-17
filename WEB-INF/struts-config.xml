@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config 
+	PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+                "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+   
+ 	
+<data-sources/>
+ 
+
+    <form-beans>
+    	<form-bean name="KeroseneClothRequisitionForm" type="com.formbean.KeroseneClothRequisitionForm"/>
+		<form-bean name="DieselPurchaseForm" type="com.formbean.DieselPurchaseForm"/>
+		<form-bean name="KeroseneClothPurchaseForm" type="com.formbean.KeroseneClothPurchaseForm"/>
+		<form-bean name="PaintPurchaseForm" type="com.formbean.PaintPurchaseForm"/>
+		<form-bean name="PaintRequisitionForm" type="com.formbean.PaintRequisitionForm"/>
+		<form-bean name="OilGreaseRequisitionForm" type="com.formbean.OilGreaseRequisitionForm"/>
+		<form-bean name="GeneralNotePurchaseForm" type="com.formbean.GeneralNotePurchaseForm"/>
+		<form-bean name="GeneralNoteRequisitionForm" type="com.formbean.GeneralNoteRequisitionForm"/>
+		<form-bean name="OilGreasePurchaseForm" type="com.formbean.OilGreasePurchaseForm"/>
+		<form-bean name="DieselOrderFromEOForm" type="com.formbean.DieselOrderFromEOForm"/>
+		<form-bean name="DieselRequisitionForm" type="com.formbean.DieselRequisitionForm"/>
+		<form-bean name="TyreRequisitionForm" type="com.formbean.TyreRequisitionForm"/>
+		<form-bean name="TyrePurchaseForm" type="com.formbean.TyrePurchaseForm"/>
+		<form-bean name="CompanyDetailsForm" type="com.formbean.CompanyDetailsForm"/>
+		<form-bean name="successForm" type="com.formbean.successForm"/>
+		<form-bean name="InboxForm" type="com.formbean.InboxForm"/>
+	    
+		<form-bean name="SparePartsForm" type="com.formbean.SparePartsForm"/>
+		<form-bean name="DieselForm" type="com.formbean.DieselForm"/>
+		<form-bean name="DieselOutsideForm" type="com.formbean.DieselOutsideForm"/>
+		<form-bean name="GreaseForm" type="com.formbean.GreaseForm"/>
+		<form-bean name="KeroseneForm" type="com.formbean.KeroseneForm"/>
+		<form-bean name="OilForm" type="com.formbean.OilForm"/>
+		<form-bean name="PaintForm" type="com.formbean.PaintForm"/>
+		<form-bean name="GeneralNoteForm" type="com.formbean.GeneralNoteForm"/>
+		<form-bean name="WasteForm" type="com.formbean.WasteForm"/>
+		<form-bean name="ScrapForm" type="com.formbean.ScrapForm"/>
+		<form-bean name="ServiceReqForm" type="com.formbean.ServiceReqForm"/>
+		<form-bean name="ReturnForm" type="com.formbean.ReturnForm"/>
+		<form-bean name="PassingBillForm" type="com.formbean.PassingBillForm"/>
+		<form-bean name="ScrapIssueForm" type="com.formbean.ScrapIssueForm"/>
+		<form-bean name="ServiceForm" type="com.formbean.ServiceForm"/>
+		<form-bean name="LabourForm" type="com.formbean.LabourForm"/>
+		<form-bean name="FcForm" type="com.formbean.FcForm"/>
+		<form-bean name="TyreRemovalForm" type="com.formbean.TyreRemovalForm"/>
+	    <form-bean name="TyreFittingForm" type="com.formbean.TyreFittingForm"/>
+	    <form-bean name="TyreRebuiltRequisitionForm" type="com.formbean.TyreRebuiltRequisitionForm"/>
+	    <form-bean name="TyreRebuiltForm" type="com.formbean.TyreRebuiltForm"/>
+	    <form-bean name="TyreRepairWorkRequisitionForm" type="com.formbean.TyreRepairWorkRequisitionForm"/>
+	    <form-bean name="TyreRepairWorkForm" type="com.formbean.TyreRepairWorkForm"/>
+	    <form-bean name="CondemnTyreForm" type="com.formbean.CondemnTyreForm"/>
+	    <form-bean name="LoginForm" type="com.formbean.LoginForm"/>
+		<form-bean name="DriverPersonalForm" type="com.formbean.DriverPersonalForm"/>
+		<form-bean name="DriverLeaveForm" type="com.formbean.DriverLeaveForm"/>
+		<form-bean name="DriverLicenceForm" type="com.formbean.DriverLicenceForm"/>
+		<form-bean name="DriverOfficialForm" type="com.formbean.DriverOfficialForm"/>
+		<form-bean name="DriverPolicyForm" type="com.formbean.DriverPolicyForm"/>
+		<form-bean name="BreakDownForm" type="com.formbean.BreakDownForm"/>
+		<form-bean name="AccidentDetailsForm" type="com.formbean.AccidentDetailsForm"/>
+		<form-bean name="RoadTaxForm" type="com.formbean.RoadTaxForm"/>
+		<form-bean name="VehicleInsuranceForm" type="com.formbean.VehicleInsuranceForm"/>
+		<form-bean name="BusAllotmentForm" type="com.formbean.BusAllotmentForm"/>
+		<form-bean name="VehicleDetailsForm" type="com.formbean.VehicleDetailsForm"/>
+		<form-bean name="OldVehiclePurchaseForm" type="com.formbean.OldVehiclePurchaseForm"/>
+		<form-bean name="EquipmentDetailsForm" type="com.formbean.EquipmentDetailsForm"/>
+		<form-bean name="EquipmentAllotmentForm" type="com.formbean.EquipmentAllotmentForm"/>
+	    <form-bean name="AddEquipmentForm" type="com.formbean.AddEquipmentForm"/>
+	    
+	</form-beans>
+    <global-exceptions/>
+    <global-forwards>
+       
+	</global-forwards>
+    <action-mappings>
+	<!--claim verification-->
+	<action path="/login" 
+		    validate="false"
+            name="LoginForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.LoginAction">            
+            <forward name="load" path="/display.login"/>
+            <forward name="success" path="/display.spare"/>
+			<forward name="failure" path="/display.login"/>
+		    </action> 
+		    
+		<action path="/spare" 
+		   name="SparePartsForm"
+		   scope="session"
+		   validate="false"
+		   parameter="invoke"
+		   type="com.action.SpareAction">
+               <forward name="load" path="/display.spare"/>
+               <forward name="inb" path="/display.spare"/>
+        </action> 
+        
+          <action path="/sparevalidate" 
+		   name="SparePartsForm"
+		   scope="session"
+		   validate="true"
+		   input="/display.spare"
+		   parameter="invoke"
+		   type="com.action.SpareAction">
+               <forward name="load" path="/display.spare"/>
+               
+        </action>
+        <action path="/service" 
+		   name="ServiceForm"
+		   scope="session"
+		   validate="false"
+		   
+		   parameter="invoke"
+		   type="com.action.ServiceAction">
+               <forward name="load" path="/display.service"/>
+               <forward name="inb" path="/display.service"/>
+        </action> 
+        
+        <action path="/fc" 
+		   name="FcForm"
+		   scope="session"
+		   validate="false"
+		   parameter="invoke"
+		   type="com.action.FcAction">
+               <forward name="load" path="/display.fc"/>
+               <forward name="inb" path="/display.fc"/>
+        </action>
+        
+		
+        <action path="/grease" 
+		   name="GreaseForm"
+		   scope="session"
+		   validate="false"
+		   parameter="invoke"
+		   type="com.action.GreaseAction">
+               <forward name="load" path="/display.grease"/>
+               <forward name="inb" path="/display.grease"/>
+        </action> 
+        
+        <action path="/greasevalidate" 
+		   name="GreaseForm"
+		   scope="session"
+		   validate="true"
+		   parameter="invoke"
+		   type="com.action.GreaseAction">
+               <forward name="load" path="/display.grease"/>
+               <forward name="inb" path="/display.grease"/>
+        </action> 
+        
+        <action path="/kerosene" 
+		   name="KeroseneForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/kerosene.jsp"
+		   parameter="invoke"
+		   type="com.action.KeroseneAction">
+               <forward name="load" path="/display.kerosene"/>
+               <forward name="inb" path="/display.kerosene"/>
+        </action> 
+        
+         <action path="/keroseneValidate" 
+		   name="KeroseneForm"
+		   scope="session"
+		   validate="true"
+		   input="/display.kerosene"
+		   parameter="invoke"
+		   type="com.action.KeroseneAction">
+               <forward name="load" path="/display.kerosene"/>
+       </action> 
+        <action path="/oil" 
+		   name="OilForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/oil.jsp"
+		   parameter="invoke"
+		   type="com.action.OilAction">
+               <forward name="load" path="/display.oil"/>
+               <forward name="oilinsert" path="/display.oil"/>
+               <forward name="oilretrieve" path="/display.oil"/>
+                <forward name="inb" path="/display.oil"/>
+        </action> 
+        
+         <action path="/oilvalidate" 
+		   name="OilForm"
+		   scope="session"
+		   validate="true"
+		   input="/display.oil"
+		   parameter="invoke"
+		   type="com.action.OilAction">
+               <forward name="load" path="/display.oil"/>
+         </action> 
+        
+        <action path="/paint" 
+		   name="PaintForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/paint.jsp"
+		   parameter="invoke"
+		   type="com.action.PaintAction">
+               <forward name="load" path="/display.paint"/>
+               <forward name="inb" path="/display.paint"/>
+        </action> 
+        
+        <action path="/general" 
+		   name="GeneralNoteForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/generalnote.jsp"
+		   parameter="invoke"
+		   type="com.action.GeneralNoteAction">
+               <forward name="load" path="/display.generalnote"/>
+               <forward name="inb" path="/display.generalnote"/>
+        </action> 
+        
+        <action path="/scrap" 
+		   name="ScrapForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/scrapmaintenance.jsp"
+		   parameter="invoke"
+		   type="com.action.ScrapAction">
+               <forward name="load" path="/display.scrapmaintenance"/>
+               <forward name="inb" path="/display.scrapmaintenance"/>
+               <forward name="scrapretrieve" path="/display.scrapmaintenance"/>
+        </action> 
+        <action path="/scrapissue" 
+		   name="ScrapIssueForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/scrapissue.jsp"
+		   parameter="invoke"
+		   type="com.action.ScrapIssueAction">
+               <forward name="load" path="/display.scrapissue"/>
+               <forward name="inb" path="/display.scrapissue"/>
+        </action> 
+        
+        <action path="/waste" 
+		   name="WasteForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/wastecloth.jsp"
+		   parameter="invoke"
+		   type="com.action.WasteAction">
+               <forward name="load" path="/display.wastecloth"/>
+               <forward name="inb" path="/display.wastecloth"/>
+        </action> 
+        
+        <action path="/wasteValidate" 
+		   name="WasteForm"
+		   scope="session"
+		   validate="true"
+		   input="/display.wastecloth"
+		   parameter="invoke"
+		   type="com.action.WasteAction">
+               <forward name="load" path="/display.wastecloth"/>
+        </action> 
+        
+        <action path="/servicereq" 
+		   name="ServiceReqForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/servicerequisition.jsp"
+		   parameter="invoke"
+		   type="com.action.ServiceReqAction">
+               <forward name="load" path="/display.servicerequisition"/>
+               <forward name="inb" path="/display.servicerequisition"/>
+        </action> 
+        
+        <action path="/return" 
+		   name="ReturnForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/issuereturn.jsp"
+		   parameter="invoke"
+		   type="com.action.ReturnAction">
+               <forward name="load" path="/display.issuereturn"/>
+               <forward name="inb" path="/display.issuereturn"/>
+        </action> 
+        
+        <action path="/diesel" 
+		   name="DieselForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/diesel.jsp"
+		   parameter="invoke"
+		   type="com.action.DieselAction">
+               <forward name="load" path="/display.diesel"/>
+                <forward name="dieselinsert" path="/display.diesel"/>
+               <forward name="dieselretrive" path="/display.diesel"/>
+               <forward name="inb" path="/display.diesel"/>
+        </action> 
+        
+          <action path="/dieselvalidate" 
+		   name="DieselForm"
+		   scope="session"
+		   validate="true"
+		    input="/display.diesel"
+		   parameter="invoke"
+		   type="com.action.DieselAction">
+               <forward name="load" path="/display.diesel"/>
+               <forward name="dieselinsert" path="/display.diesel"/>
+               <forward name="dieselretrive" path="/display.diesel"/>
+               <forward name="inb" path="/display.diesel"/>
+        </action>
+        
+         <action path="/dieseloutside" 
+		   name="DieselOutsideForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/dieseloutside.jsp"
+		   parameter="invoke"
+		   type="com.action.DieselOutsideAction">
+               <forward name="load" path="/display.dieseloutside"/>
+               <forward name="dieselinsert" path="/display.dieseloutside"/>
+               <forward name="dieselretrive" path="/display.dieseloutside"/>
+        </action> 
+        
+        <action path="/passingbill" 
+		   name="PassingBillForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/passingbill.jsp"
+		   parameter="invoke"
+		   type="com.action.PassingBillAction">
+               <forward name="load" path="/display.passingbill"/>
+        </action> 
+        
+        <action path="/labour" 
+		   name="LabourForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/labourcharge.jsp"
+		   parameter="invoke"
+		   type="com.action.LabourAction">
+               <forward name="load" path="/display.labourcharge"/>
+        </action>
+        
+        <action path="/tyrefitting" 
+		   name="TyreFittingForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyrefitting.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreFittingAction">
+               <forward name="load" path="/display.tyrefitting"/>
+               <forward name="inb" path="/display.tyrefitting"/>
+        </action> 
+        <action path="/tyreremoval" 
+		   name="TyreRemovalForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyreremoval.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRemovalAction">
+               <forward name="load" path="/display.tyreremoval"/>
+               <forward name="inb" path="/display.tyreremoval"/>
+        </action> 
+        
+        <action path="/rebuiltrequisition" 
+		   name="TyreRebuiltRequisitionForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyrerebuiltrequisition.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRebuiltRequisitionAction">
+               <forward name="load" path="/display.rebuiltrequisition"/>
+               <forward name="inb" path="/display.rebuiltrequisition"/>
+        </action> 
+        
+        <action path="/rebuilt" 
+		   name="TyreRebuiltForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyrerebuilt.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRebuiltAction">
+               <forward name="load" path="/display.rebuilt"/>
+               <forward name="inb" path="/display.rebuilt"/>
+        </action> 
+        
+        <action path="/repairrequisition" 
+		   name="TyreRepairWorkRequisitionForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyretepairworkrequisition.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRepairWorkRequisitionAction">
+               <forward name="load" path="/display.repairrequisition"/>
+               <forward name="inb" path="/display.repairrequisition"/>
+        </action> 
+        
+        <action path="/tyrerepair" 
+		   name="TyreRepairWorkForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/tyrerepairwork.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRepairWorkAction">
+               <forward name="load" path="/display.tyrerepair"/>
+               <forward name="inb" path="/display.tyrerepair"/>
+        </action>
+        
+        <action path="/condemntyre" 
+		   name="CondemnTyreForm"
+		   scope="session"
+		   validate="false"
+		   input="/jsp/condemntyre.jsp"
+		   parameter="invoke"
+		   type="com.action.CondemnTyreAction">
+               <forward name="load" path="/display.condemntyre"/>
+               <forward name="inb" path="/display.condemntyre"/>
+        </action> 
+               
+          <action path="/driverpersonal" 
+		    validate="false"
+            name="DriverPersonalForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.DriverPersonalAction">            
+           <forward name="load" path=".display.driverpersonal"/>
+           </action> 
+           
+           <action path="/driverpersonalvalidate" 
+		    validate="true"
+            name="DriverPersonalForm" 
+            scope="session" 
+            input=".display.driverpersonal"
+			parameter="invoke"
+            type="com.action.DriverPersonalAction">            
+           <forward name="load" path=".display.driverpersonal"/>
+           </action> 
+           
+           <action path="/driverofficial" 
+		    validate="false"
+            name="DriverOfficialForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.DriverOfficialAction">
+            <forward name="licence" path=".display.driverlicence"/>
+            <forward name="insurance" path=".display.driverpolicy"/>
+            <forward name="load" path=".display.driverofficial"/>
+		    </action> 
+		    
+		    <action path="/driverofficialvalidate" 
+		    validate="true"
+            name="DriverOfficialForm" 
+            scope="session" 
+            input=".display.driverofficial"
+			parameter="invoke"
+            type="com.action.DriverOfficialAction">
+            <forward name="load" path=".display.driverofficial"/>
+		    </action> 
+		    
+		    <action path="/driverlicence" 
+		    validate="false"
+            name="DriverLicenceForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.DriverLicenceAction">            
+           <forward name="load" path=".display.driverlicence"/> 
+           <forward name="back" path=".display.driverofficial"/>
+             </action> 
+           
+           <action path="/driverlicencevalidate" 
+		   name="DriverLicenceForm"
+		   scope="session"
+		   input=".display.driverlicence"
+		   validate="true"
+		   parameter="invoke"
+		   type="com.action.DriverLicenceAction">
+            	<forward name="load" path=".display.driverlicence"/>
+           </action>
+		                 
+            <action path="/driverpolicy" 
+		    validate="false"
+            name="DriverPolicyForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.DriverPolicyAction">
+           		<forward name="load" path=".display.driverpolicy"/>
+           		<forward name="back" path=".display.driverofficial"/>
+           </action>
+           
+           <action path="/driverpolicyvalidate" 
+		   name="DriverPolicyForm"
+		   scope="session"
+		   input=".display.driverpolicy"
+		   validate="true"
+		   parameter="invoke"
+		   type="com.action.DriverPolicyAction">
+               <forward name="load" path=".display.driverpolicy"/>
+           </action>
+     
+            <action path="/driverleave" 
+		    validate="false"
+            name="DriverLeaveForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.DriverLeaveAction">
+           		 <forward name="load" path=".display.driverleave"/>
+             </action> 
+             
+          <action path="/driverleavevalidate" 
+		   name="DriverLeaveForm"
+		   scope="session"
+		   input=".display.driverleave"
+		   validate="true"
+		   parameter="invoke"
+		   type="com.action.DriverLeaveAction">
+          		 <forward name="load" path=".display.driverleave"/>
+           </action>
+        
+            
+           <action path="/busallotment" 
+		    validate="false"
+            name="BusAllotmentForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.BusAllotmentAction">
+            <forward name="load" path=".display.busallotment"/> 
+            <forward name="equipmentForm" path=".display.equipmentallotment"/>
+            </action> 
+            
+            <action path="/busallotmentvalidate" 
+		    validate="true"
+            name="BusAllotmentForm" 
+            scope="session" 
+            input=".display.busallotment"
+			parameter="invoke"
+            type="com.action.BusAllotmentAction">
+            <forward name="load" path=".display.busallotment"/> 
+            </action> 
+			
+			<action path="/roadtax" 
+		    validate="false"
+            name="RoadTaxForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.RoadTaxAction">
+            <forward name="load" path=".display.roadtax"/>
+             <forward name="vehicletype" path=".display.roadtax"/>
+               <forward name="vehicleid" path=".display.roadtax"/>
+            <forward name="insert" path=".display.roadtax"/>
+	        </action>
+	        
+	        <action path="/vehicleinsurance" 
+		    validate="false"
+            name="VehicleInsuranceForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.VehicleInsuranceAction">
+            <forward name="load" path=".display.vehicleinsurance"/>
+            </action> 
+	       
+	        <action path="/breakdown" 
+		    validate="false"
+            name="BreakDownForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.BreakDownAction">
+            <forward name="load" path=".display.breakdown"/>
+            </action> 
+            
+             <action path="/breakdownvalidate" 
+		    validate="true"
+            name="BreakDownForm" 
+            scope="session" 
+            input=".display.breakdown"
+			parameter="invoke"
+            type="com.action.BreakDownAction">
+            <forward name="load" path=".display.breakdown"/>
+            </action> 
+        
+           <action path="/equipmentallotment" 
+		    validate="false"
+            name="EquipmentAllotmentForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.EquipmentAllotmentAction">
+            <forward name="load" path=".display.equipmentallotment"/>
+            <forward name="back" path=".display.busallotment"/>
+		    </action> 
+        
+            <action path="/equipmentdetails" 
+		    validate="false"
+            name="EquipmentDetailsForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.EquipmentDetailsAction">
+            <forward name="load" path=".display.equipmentdetails"/>
+            <forward name="back" path=".display.vehiclepurchase"/>
+		    </action> 
+		    
+		    <action path="/vehicledetails" 
+		    validate="false"
+            name="VehicleDetailsForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.VehicleDetailsAction">
+           <forward name="load" path=".display.vehicledetails"/>
+           </action> 
+                
+            <action path="/accident" 
+		    validate="false"
+            name="AccidentDetailsForm" 
+            scope="session" 
+			parameter="invoke"
+            type="com.action.AccidentAction">           
+           <forward name="load" path=".display.accident"/>
+           </action>      
+       	          <action path="/success" 
+		  	   name="successForm"
+		   scope="session"
+		   validate="false"
+		   
+		   parameter="invoke"
+		   type="com.action.successAction">
+               <forward name="load" path="/display.success"/>
+            
+        </action> 
+        
+     
+       		
+       	            <action path="/req_tyre" 
+		   name="TyreRequisitionForm"
+		   scope="session"
+		   validate="false"
+		   input="/include/tyrerequisition.jsp"
+		   parameter="invoke"
+		   type="com.action.TyreRequisitionAction">
+               <forward name="eject1" path="/display.tyrerequisition"/>
+               <forward name="inb" path="/display.tyrerequisition"/>
+        </action> 
+        
+         <action path="/tyrepurchase" 
+		   name="TyrePurchaseForm"
+		   scope="session"
+		  validate="false"
+		   input="/include/tyrepurchase.jsp"
+		   parameter="invoke"
+		   type="com.action.TyrePurchaseAction">
+               <forward name="eject1" path="/display.tyrepurchase"/>
+               <forward name="inb" path="/display.tyrepurchase"/>
+        </action> 
+        
+        <action path="/kerosenerequisition" 
+		    validate="false"
+            name="KeroseneClothRequisitionForm" 
+            scope="session" 
+            input="/jsp/keroseneclothrequisition.jsp"
+			parameter="invoke"
+            type="com.action.KeroseneClothRequisitionAction">
+            <forward name="load" path="/display.keroseneclothrequisition"/>
+            <forward name="success" path="/display.success"/>
+             <forward name="fwdtoincharge" path="/display.success1"/>
+              <forward name="taskcomplete" path="/jsp/taskcomplete.jsp"/>
+        </action> 
+        
+        
+         <action path="/dieselpurchase" 
+		    validate="false"
+            name="DieselPurchaseForm" 
+            scope="session" 
+            input="/include/dieselpurchase.jsp"
+			parameter="invoke"
+            type="com.action.DieselPurchaseAction">
+            <forward name="load" path="/display.dieselpurchase"/>
+            <forward name="success" path="/display.success"/>
+             <forward name="fwdtoincharge" path="/display.success1"/>
+        </action> 
+        
+         <action path="/paintsparepurchase" 
+		    validate="false"
+            name="PaintSparepartsPurchaseForm" 
+            scope="session" 
+            input="/include/paintsparepartspurchase.jsp"
+			parameter="invoke"
+            type="com.action.PaintSparepartsPurchaseAction">
+            <forward name="paipur" path="/display.paintsparepartspurchase"/>
+        </action> 
+        
+        <action path="/kerosenepurchase" 
+		    validate="false"
+            name="KeroseneClothPurchaseForm" 
+            scope="session" 
+            input="/include/keroseneclothpurchase.jsp"
+			parameter="invoke"
+            type="com.action.KeroseneClothPurchaseAction">
+            <forward name="load" path="/display.keroseneclothpurchase"/>
+             <forward name="success" path="/display.success"/>
+             <forward name="fwdtoincharge" path="/display.success1"/>
+              <forward name="taskcomplete" path="/display.taskcomplete"/>
+        </action> 
+        
+         <action path="/paintrequisition" 
+		    validate="false"
+            name="PaintRequisitionForm" 
+            scope="session" 
+            input="/include/paintrequisition.jsp"
+			parameter="invoke"
+            type="com.action.PaintRequisitionAction">
+            <forward name="load" path="/display.paintrequisition"/>
+        </action> 
+        
+          <action path="/oilgreaserequisition" 
+		    validate="false"
+            name="OilGreaseRequisitionForm" 
+            scope="session" 
+            input="/include/oilgreaserequisition.jsp"
+			parameter="invoke"
+            type="com.action.OilGreaseRequisitionAction">
+            <forward name="oilreq" path="/display.oilgreaserequisition"/>
+            <forward name="success" path="/display.success"/>
+             <forward name="fwdtoincharge" path="/display.success1"/>
+            
+        </action> 
+        <action path="/oilgreaserequisitionvalidate" 
+		    validate="true"
+            name="OilGreaseRequisitionForm" 
+            scope="session" 
+            input="/display.oilgreaserequisition"
+			parameter="invoke"
+            type="com.action.OilGreaseRequisitionAction">
+            <forward name="oilreq" path="/display.oilgreaserequisition"/>
+            <forward name="success" path="/display.success"/>
+             <forward name="fwdtoincharge" path="/display.success1"/>
+            
+        </action> 
+        
+        <action path="/generalnote" 
+		    validate="false"
+            name="GeneralNotePurchaseForm" 
+            scope="session" 
+            input="/include/generalnotepurchase.jsp"
+			parameter="invoke"
+            type="com.action.GeneralNotePurchaseAction">
+            <forward name="load" path="/display.generalnotepurchase"/>
+        </action>
+        
+        <action path="/reqgeneralnote" 
+		   name="GeneralNoteRequisitionForm"
+		   scope="session"
+		   validate="false"
+		   input="/include/generalnoterequisition.jsp"
+		   parameter="invoke"
+		   type="com.action.GeneralNoteRequisitionAction">    
+		      <forward name="eject1" path="/display.generalnoterequisition"/>
+               <forward name="inb" path="/display.generalnoterequisition"/>
+        </action> 
+        
+         <action path="/greaseoil" 
+		   name="OilGreasePurchaseForm"
+		   scope="session"
+		  validate="false"
+		   input="/include/oilgrease.jsp"
+		   parameter="invoke"
+		   type="com.action.OilGreasePurchaseAction">
+               <forward name="load" path="/display.oilgreasepurchase"/>
+               <forward name="inb" path="/display.oilgreasepurchase"/>
+               <forward name="success" path="/display.success"/>
+        </action> 
+        
+        
+        <action path="/orderFromEO" 
+		   name="DieselOrderFromEOForm"
+		   scope="session"
+		  validate="false"
+		   input="/jsp/dieselorderfromEO.jsp"
+		   parameter="invoke"
+		   type="com.action.DieselOrderFromEOAction">
+               <forward name="load" path="/display.orderFromEO"/>
+               <forward name="inb" path="/display.orderFromEO"/>
+               <forward name="success" path="/display.success"/>
+           <forward name="subtoincharge"  path="/display.success1"/>
+        </action> 
+        
+         <action path="/req_diesel" 
+		   name="DieselRequisitionForm"
+		   scope="session"
+		   validate="false"
+		   input="/display.dieselrequisition"
+		   parameter="invoke"
+		   type="com.action.DieselRequisitionAction">
+		   <forward name="load" path="/display.dieselrequisition"/>
+           <forward name="eject1" path="/display.dieselrequisition"/>
+           <forward name="success" path="/display.success"/>
+           <forward name="subtoincharge"  path="/display.success1"/>
+           <forward name="taskcomplete"  path="/display.taskcomplete"/>
+               
+        </action> 
+        
+         <action path="/inbox" 
+		   name="InboxForm"
+		   scope="session"
+		   validate="false"
+		   input="/display.diesel"
+		   parameter="invoke"
+		   type="com.action.InboxAction">
+               <forward name="view" path="/display.inbox"/>
+               <forward name="SparePartsForm_approve" path="/spare.do?invoke=inboxMethod"/>
+               <forward name="SparePartsForm_issue" path="/spare.do?invoke=inboxMethod"/>
+               <forward name="DieselForm_approve" path="/diesel.do?invoke=inboxMethod"/>
+               <forward name="DieselForm_issue" path="/diesel.do?invoke=inboxMethod"/>
+               <forward name="DieselOutsideForm_approve" path="/dieseloutside.do?invoke=inboxMethod"/>
+               <forward name="DieselOutsideForm_issue" path="/dieseloutside.do?invoke=inboxMethod"/>
+               <forward name="KeroseneForm_approve" path="/keros.do?invoke=inboxMethod"/>
+               <forward name="KeroseneForm_issue" path="/keros.do?invoke=inboxMethod"/>
+               <forward name="outsidedieselForm_approve" path="/display.spare"/>
+               <forward name="PaintForm_approve" path="/paint.do?invoke=inboxMethod"/>
+               <forward name="PaintForm_issue" path="/paint.do?invoke=inboxMethod"/>
+               <forward name="WasteForm_approve" path="/waste.do?invoke=inboxMethod"/>
+               <forward name="WasteForm_issue" path="/waste.do?invoke=inboxMethod"/>
+               <forward name="LabourForm_approve" path="/labour.do?invoke=inboxMethod"/>
+               <forward name="LabourForm_issue" path="/labour.do?invoke=inboxMethod"/>
+               <forward name="GreaseForm_approve" path="/grease.do?invoke=inboxMethod"/>
+               <forward name="GreaseForm_issue" path="/grease.do?invoke=inboxMethod"/>
+               <forward name="OilForm_approve" path="/oil.do?invoke=inboxMethod"/>
+               <forward name="OilForm_issue" path="/oil.do?invoke=inboxMethod"/>
+                forward name="TyreRebuiltRequisitionForm_approve" path="/rebuiltrequisition.do?invoke=inboxMethod"/>
+               <forward name="TyreRebuiltRequisitionForm_issue" path="/rebuiltrequisition.do?invoke=inboxMethod"/>
+               <forward name="TyreRebuiltForm_approve" path="/rebuilt.do?invoke=inboxMethod"/>
+               <forward name="TyreRebuiltForm_issue" path="/rebuilt.do?invoke=inboxMethod"/>
+               <forward name="TyreRepairWorkRequisitionForm_approve" path="/repairrequisition.do?invoke=inboxMethod"/>
+               <forward name="TyreRepairWorkRequisitionForm_issue" path="/repairrequisition.do?invoke=inboxMethod"/>
+               <forward name="TyreRepairWorkForm_approve" path="/tyrerepair.do?invoke=inboxMethod"/>
+               <forward name="TyreRepairWorkForm_issue" path="/tyrerepair.do?invoke=inboxMethod"/>
+                <forward name="DieselRequisitionForm_approve" path="/req_diesel.do?invoke=inboxMethod"/>
+               <forward name="DieselRequisitionForm_issue" path="/req_diesel.do?invoke=inboxMethod"/>
+               <forward name="DieselRequisitionForm_order" path="/orderFromEO.do?invoke=inboxMethod"/>
+               <forward name="DieselRequisitionForm_purchase" path="/req_diesel.do?invoke=inboxMethod"/>
+               <forward name="OilGreaseRequisitionForm_approve" path="/oilgreaserequisition.do?invoke=inboxMethod"/>
+               <forward name="OilGreaseRequisitionForm_issue" path="/oilgreaserequisition.do?invoke=inboxMethod"/>
+               <forward name="OilGreaseRequisitionForm_purchase" path="/greaseoil.do?invoke=inboxMethod"/>
+               <forward name="OilGreaseRequisitionForm_reach" path="/oilgreaserequisition.do?invoke=inboxMethod"/>
+               <forward name="KeroseneClothRequisitionForm_approve" path="/kerosenerequisition.do?invoke=inboxMethod"/>
+               <forward name="KeroseneClothRequisitionForm_issue" path="/kerosenerequisition.do?invoke=inboxMethod"/>
+               <forward name="KeroseneClothRequisitionForm_purchase" path="/kerosenerequisition.do?invoke=inboxMethod"/>
+        </action> 
+        
+         <action path="/eoinbox" 
+		   name="InboxForm"
+		   scope="session"
+		   validate="false"
+		   input="/display.diesel"
+		   parameter="invoke"
+		   type="com.action.eoAction">
+               <forward name="view" path="/display.eoinbox"/>       
+        </action> 
+        
+         <action path="/companydetails" 
+         
+		   name="CompanyDetailsForm"
+		   scope="session"
+		   validate="false"
+		   input="/display.companydetails"
+		   parameter="invoke"
+		   type="com.action.CompanyDetailsAction">
+               <forward name="company" path="/display.companydetails"/>       
+        </action> 
+        
+   </action-mappings> 
+   
+    <!-- ========== Controller ===================  -->
+    <controller 
+        contentType="text/html;charset=UTF-8" 
+        debug="3"
+        locale="true" 
+        nocache="true" 
+        processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+        
+    <!-- ========== Message Resources ===================  -->
+    <message-resources  parameter="ApplicationResources" null="false"/>
+   
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config" value="/WEB-INF/tiles-config.xml"/>
+        <set-property property="definitions-parser-validate" value="true"/>
+        <set-property property="definitions-debug" value="5"/>
+        <set-property property="moduleAware" value="true"/>
+    </plug-in>
+    
+    
+</struts-config>

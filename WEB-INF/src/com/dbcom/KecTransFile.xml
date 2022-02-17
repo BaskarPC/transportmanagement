@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE services [
+<!ELEMENT column EMPTY>
+<!ATTLIST column
+	name NMTOKEN #REQUIRED
+	property NMTOKEN #REQUIRED
+>
+
+<!ELEMENT column-mapping (column+)>
+
+<!ELEMENT dao (set-property,column-mapping)>
+
+<!ELEMENT datasource (set-property+)>
+<!ATTLIST datasource name NMTOKEN #REQUIRED>
+
+<!ELEMENT datasources (datasource+)>
+
+<!ELEMENT jndi (set-property+)>
+
+<!ELEMENT mail (set-property+)>
+
+<!ELEMENT services (jndi,datasources,dao)>
+
+<!ELEMENT set-property EMPTY>
+<!ATTLIST set-property
+	property NMTOKEN #REQUIRED
+	value CDATA #REQUIRED
+>
+]>
+<services>
+	<jndi>
+		<set-property property="url" value=""/>
+		<set-property property="factory" value=""/>
+		<set-property property="userName" value=""/>
+		<set-property property="password" value=""/>
+	</jndi>
+	<datasources>
+  		<datasource name="jdbc/UKClaimsDataSource">
+	  		<set-property property="jndiLookup" value="true"/>
+	  		<set-property property="jndiName" value="jdbc/UKClaimsDataSource"/>
+     		<set-property property="logExecutionTime" value="true"/>                
+     		<set-property property="logSqlStatement" value="true"/> 
+  		</datasource>
+		<datasource name="jdbc/UKClaimsDataSourcePAL">
+			<set-property property="jndiLookup" value="true"/>
+			<set-property property="jndiName" value="jdbc/UKClaimsDataSourcePAL"/>
+			<set-property property="logExecutionTime" value="true"/>                
+			<set-property property="logSqlStatement" value="true"/> 
+		</datasource>
+	</datasources>
+  	<dao>
+  		<set-property property="jndiLookup" value="false"/>
+  		<column-mapping>
+  		
+  		<!-- KEROSENE REQUISITION -->
+			<column name="AVAILABILITY" property="availableQty"/>
+			<column name="KREQDATE" property="date"/>
+			<column name="KREQFROM" property="from"/>		
+			<column name="KREQITEM" property="itemDes"/>
+			<column name="KSTOCK" property="availableQty"/>
+			<column name="KQTYNEEDED" property="qtyNeeded"/>
+			<column name="KDESCRIPTION" property="description"/>
+			
+			<column name="IMAGEID" property="id"/>
+			<column name="IMAGENAME" property="imageName"/>
+  			<column name="IMAGE" property="blobimage"/>
+  			<column name="CODE" property="code"/>
+  			<column name="CTYPE" property="ctype"/>
+  			<column name="DES" property="des"/>
+  			
+  			<column name="SID" property="sid"/>
+		
+			<column name="REQDATE" property="date"/>
+  			<column name="REQFROM" property="from"/>
+  			
+  			<column name="REQITEM" property="itemDes"/>
+  			<column name="BRANDNAME" property="brandName1"/>
+  			<column name="BRANDTYPE" property="brandType1"/>
+  			<column name="AVAILABLEQTY" property="availableQty1"/>
+  			<column name="NEEDEDQTY" property="qtyNeeded1"/>
+  			<column name="QTY" property="qtyNeeded"/>
+  			
+  			<column name="TANKCAPACITY" property="tankCapacity"/>
+  			<column name="CURRENTCAPACITY" property="currentCapacity"/>
+  			<column name="NEEDEDCAPACITY" property="qtyNeeded"/>
+  			
+  			<!-- DIESEL PURCHASE -->
+  			<column name="TEMPOLDQTY" property="tempOldQty"/>
+  			<!--<column name="NEWRATE" property="newRate"/>
+  			<column name="NEWQTY" property="newQty"/>-->
+  			
+  			<!-- OIL GREASE -->
+  			<column name="BILLDATE" property="billDate"/>
+  			<column name="BILLNO" property="billNumber"/>
+  			<column name="PURCHASEDATE" property="deliveredDate"/>
+  			<column name="COMPANYNAME" property="companyName"/>
+  			<column name="PLACE" property="place"/>
+  			<column name="GOODSTYPE" property="reqItem"/>
+  			<!-- DIESEL ORDER -->
+  			<column name="ORDERDATE" property="date"/>
+  			<column name="ORDERFROM" property="from"/>
+  			<column name="ORDERCOMPANY" property="companyName"/>
+  			<column name="ORDERLITERS" property="requiredLiters"/>
+  			<column name="ORDERCHECKNO" property="checkNo"/>
+  			<column name="ORDERBANK" property="bankName"/>
+  			<column name="ORDERAMOUNT" property="amount"/>
+  			
+  			<!-- Document Image -->
+  			<column name="ST_DOC_JOBID" property="jobId"/>
+  			<column name="ST_DOC_TASKID" property="taskId"/>
+  			<column name="ST_DOC_DOCID" property="docId"/>
+  			<column name="ST_DOC_IMAGE_NAME" property="imageName"/>
+  			<column name="ST_DOC_IMAGE_BLOB" property="blob"/>
+  		
+		<!-- User Profile -->
+			<column name="USER_NAME" property="userId"/>
+  			<column name="PASSWORD" property="passWord"/>
+  			
+  	    <!-- For LookUP -->		
+  			<column name="ICDESC" property="instDesc"/>
+  			<column name="ICODE" property="instId"/>
+  			<column name="TDESC" property="typeDesc"/>
+  			<column name="TCODE" property="typeId"/>
+  			<column name="VDESC" property="vehicleDesc"/>
+  			<column name="VCODE" property="vehicleId"/>
+  			<column name="FDESC" property="reasonDesc"/>
+  			<column name="FCODE" property="reasonId"/>
+  			<column name="FTDESC" property="fuelDesc"/>
+  			<column name="FTCODE" property="fuelId"/>
+  			<column name="CONV" property="driverName"/>
+  			<column name="CONVE" property="requestedDriverName"/>
+  			<column name="SDESC" property="categoryDesc"/>
+  			<column name="SCODE" property="categoryId"/>
+  			<column name="LDESC" property="labourDesc"/>
+  			<column name="LCODE" property="labourId"/>
+  			<column name="ODESC" property="oilDesc"/>
+  			<column name="OCODE" property="oilId"/>
+  			<column name="ORDESC" property="oilReasonDesc"/>
+  			<column name="ORCODE" property="oilReasonId"/>
+  			<column name="GDESC" property="greaseDesc"/>
+  			<column name="GCODE" property="greaseId"/>
+  			<column name="GRDESC" property="greaseReasonDesc"/>
+  			<column name="GRCODE" property="greaseReasonId"/>
+  			<column name="GNDESC" property="generalNoteDesc"/>
+  			<column name="GNCODE" property="generalNoteId"/>
+  			<column name="PDESC" property="purchaseissueDesc"/>
+  			<column name="PCODE" property="purchaseissueId"/>
+  			<column name="GODESC" property="goodsDesc"/>
+  			<column name="GOCODE" property="goodsId"/>
+  			<column name="BDESC" property="billnumberId"/>
+  			
+  	<!-- For workFlow -->		
+  			<column name="JOB" property="jobseq"/>
+  			<column name="JOBNAME" property="jobname"/>
+  			<column name="TASKCOUNT" property="taskcount"/>
+  			<column name="ATTRID" property="attributeid"/>
+  			<column name="SEQUENCE" property="seq"/>
+  			<column name="USERID" property="userid"/>
+  			<column name="USERNAME" property="username"/>
+  			<column name="TASK" property="task"/>	
+  			<column name="TASKID" property="taskid"/>
+  			<column name="ROLE" property="role"/>
+  			<column name="TASKSEQ" property="taskseq"/>
+  			<column name="FORMNAME" property="formname"/>
+  			<column name="STAT" property="stat"/>
+  			<column name="USERROLE" property="userRole"/>
+  			
+    <!-- General Item--> 			
+  			<column name="INSTITUTION_NAME" property="institutionName"/>
+  			<column name="VEHICLE_TYPE" property="vehicleType"/>
+  			<column name="VEHICLE_NUMBER" property="vehicleNumber"/>
+  		<!--	<column name="BILL_NUMBER" property="billNumber"/>-->
+  			<column name="REQ_DATE" property="requestedDate"/>
+  			<column name="ROUTENUMBER" property="routeNumber"/>
+  			<column name="OTHER_REASON" property="otherPurpose"/>
+  			<column name="DRIVERNAME" property="driverName"/>
+  		  	<column name="REQ_DRIVERNAME" property="requestedDriverName"/>
+  		  	
+  	<!-- For Fuel Entry inside and Outside -->
+  		  	<column name="FUELTYPE" property="fuelType"/>
+  		  	<column name="BUNKNAME" property="bunkName"/>
+  		  	<column name="OTHER_BUNK" property="otherBunkName"/>
+  			<column name="QTY_WANTED" property="wantedQuantity"/>
+  			<!--<column name="URATE" property="unitRate"/>-->
+  			<column name="IQTY_NEW" property="newAvailable"/>
+  			<column name="IQTY_OLD" property="oldAvailable"/>
+  			<column name="URATE_NEW" property="newRate"/>
+  			<column name="URATE_OLD" property="oldRate"/>
+  			<column name="AMOUNT" property="totalAmount"/>
+  			<column name="PRESENTKM" property="presentKm"/>
+  			<column name="DIFF_KM" property="differenceKm"/>
+  			<column name="LAST_KM" property="lastFillingKm"/>
+  			<column name="AVG_KM" property="averageKm"/>
+  			<column name="REMARKS" property="remark"/>
+  			<column name="STOCK" property="stock"/>
+  			<column name="OPEN_READING" property="openingReading"/>
+  			<column name="CLOSE_READING" property="closingReading"/>
+  			<column name="CONSUMTION_LITERS" property="consumptionLitres"/>
+  			<column name="BALANCE" property="balance"/>
+  			
+  			
+  			<column name="NOW" property="labourReason"/>
+  			<column name="OTHER_WORK" property="otherPurpose"/>
+  			
+  <!-- For Oil Form -->
+  			<column name="OITEM_TYPE" property="oilType1"/>
+			<column name="OREASON_REQ" property="oilReason1"/>
+  			<column name="OQTY_WANTED" property="wantedQuantity1"/>
+			<column name="OAVAILABLE_QTY" property="totalAvailableQuantity1"/>
+			<column name="OIQTY_OLD" property="oldAvailable1"/>
+  			<column name="OIQTY_NEW" property="newAvailable1"/>
+  			<column name="OURATE_OLD" property="oldRate1"/>
+  			<column name="OURATE_NEW" property="newRate1"/>
+  			<column name="OAMOUNT" property="totalAmount1"/>
+
+			<column name="OCURRENT_KM" property="currentKM"/>
+			<column name="OPREV_SERVICED_KM" property="previousServicedKM"/>
+			<column name="ODIFFERNCE_KM" property="differenceKM"/>
+			
+	<!-- For Grease Form -->		
+			<column name="GITEM_TYPE" property="oilType1"/>
+			<column name="GREASON_REQ" property="oilReason1"/>
+  			<column name="GQTY_WANTED" property="wantedQuantity1"/>
+			<column name="GAVAILABLE_QTY" property="totalAvailableQuantity1"/>
+			<column name="GIQTY_OLD" property="oldAvailable1"/>
+  			<column name="GIQTY_NEW" property="newAvailable1"/>
+  			<column name="GURATE_OLD" property="oldRate1"/>
+  			<column name="GURATE_NEW" property="newRate1"/>
+  			<column name="GAMOUNT" property="totalAmount1"/>
+  			
+  			<column name="RLVL" property="reorderLevel"/>			
+  			<column name="XQTY" property="extraQty"/>
+  			<column name="XRATE" property="extraRate"/>	
+  				
+  	<!-- For Passing Bill-->	
+  			<column name="SERVICE_STATION" property="serviceName"/>
+  			<column name="SERVICEPLACE" property="serviceStationLocation"/>
+  			<column name="ISSUE_DATE" property="billDate"/>
+  			<column name="BILLAMOUNT" property="billAmount"/>
+  			
+  	<!-- INSTITUTION LOOKUP -->
+  			<column name="INSTID" property="instid"/>
+  			<column name="INSTTYPE" property="insttype"/>
+  			<column name="INSTDESC" property="instdesc"/>
+  			
+	<!-- VEHICLE LOOK UP -->
+  			<column name="VEHICLETYPEID" property="vehicletypeid"/>
+  			<column name="VEHICLETYPE1" property="vehicletype"/>
+  			<column name="VEHICLETYPEDESC" property="vehicletypedesc"/>
+  			
+  			<column name="VEHICLENUMBERID" property="vehiclenumberid"/>
+  			<column name="VEHICLENUMBER1" property="vehiclenumber1"/>
+  			<column name="VEHICLENUMBERDESC" property="vehiclenumberdesc"/>
+  			
+  			<column name="INSTITUTIONNAME" property="institutionName"/>
+  			<column name="VEHICLETYPE" property="vehicleType"/>
+  			<column name="VEHNUMBER" property="vehicleNumber"/>
+  			<column name="BILLNUMBER" property="billNumber"/>
+  			
+  			
+  			<column name="REQDRIVER" property="requestedDriverName"/>
+  			<column name="SPAREOTHERREASON" property="otherPurpose"/>
+  			<column name="REMARK" property="remark"/>
+  			<column name="CLOSINGREADING" property="closingReading"/>
+  			<column name="LASTFILLINGKM" property="lastFillingKm"/>
+  			
+	<!--Kerosene VO-->
+  			<column name="OTHERREASON" property="otherPurpose"/>
+  			<column name="AVAILABLE" property="totalAvailableQuantity"/>
+  			<column name="QUANTITYWANT" property="requiredQuantity"/>
+  			<column name="OLDWANT" property="oldAvailable"/>
+  			<column name="NEWWANT" property="newAvailable"/>
+  			<column name="OLDRATE" property="oldRate"/>
+  			<column name="NEWRATE" property="newRate"/>
+  			<column name="TOTALAMOUNT" property="totalAmount"/>
+  			
+  			<column name="REQUIREDREAS" property="keroseneReason"/>
+  			<column name="CURRENTKM" property="currentKm"/>
+  			
+  			<column name="TEMPOLDPRICE" property="oldRate"/>
+  			<column name="TEMPNEWPRICE" property="newRate"/>
+  			<column name="TEMPOLDQUANTITY" property="oldAvailable"/>
+  			<column name="TEMPNEWQUANTITY" property="newAvailable"/>
+  			
+  		<!--waste VO-->
+  			<column name="URATE" property="unitRate"/>
+  		<!--SPARE VO-->
+  			<column name="QTY1" property="totalAvailableQuantity1"/>
+  			<column name="PRICE1" property="oldRate1"/>
+  			
+  	<!--SPARE DISPLAY-->	
+  		<!--SparepartsDAO-->
+  			<column name="SPAREISSUEPARTNUMBER" property="partNumber1"/>
+  			<column name="SPAREISSUEBRANDNAME" property="itemDescription1"/>
+  			  			
+			<column name="OLDQTY" property="oldQuantity"/>
+  			<column name="NEWQTY" property="newQuantity"/>  			  			
+  	 			
+  			<column name="AVAILQTY" property="totalAvailableQuantity1"/>
+  			<column name="WANTEDQTY" property="wantedQuantity1"/>
+  			<column name="SOLDQUANTITY" property="oldAvailable1"/>
+  			<column name="SPAREISSUENEWQTY" property="newAvailable1"/>
+  			<column name="SOLDRATE" property="oldRate1"/>
+  			<column name="SPAREISSUENEWRATE" property="newRate1"/>
+  			<column name="SAMOUNT" property="totalAmount1"/>
+  			
+		 <!--Spare parts requisition VO-->
+		 	<column name="SPAREID" property="spareId"/>
+		 	<column name="SPARETYPE" property="spareType"/>
+  			<column name="SPARENUMBER" property="spareNumber"/>
+  			
+  			
+  			<column name="SPAREREASON" property="reason"/>
+		 	<column name="SPAREITEM" property="itemDes"/>
+  			<column name="SPAREBRANDNAME" property="brandName1"/>
+		 	<column name="SPAREBRANDTYPE" property="brandType1"/>
+  			<column name="SPAREWANTEDQUANTITY" property="qtyNeeded1"/>
+		 	<column name="SPAREAVAILABLE" property="availableQty1"/>
+		 				
+  			<column name="VEHTYPE" property="vehtype"/>
+  			<column name="VEHID" property="vehid"/>
+  			<column name="SPARESEQUENCE" property="spareSequence"/>
+  			<column name="SUMQTY" property="sumqty"/>
+  			
+  		<!--SPARE PURCHASE vo and DAO-->
+  			<column name="WANTEDPID" property="brandType1"/>
+  			<column name="WANTEDQTY1" property="qtyPurchased1"/>
+  			<column name="WANTEDPRICE1" property="unitPrice1"/>
+  			<column name="BILLSEQUENCE" property="billNo"/>
+  			
+  		<!--Paint issue VO-->
+  			<column name="PAINTID" property="paintId"/>
+		 	<column name="PAINTTYPE" property="paintType"/>
+  			<column name="PAINTCOLOR" property="paintColor"/>
+  			
+  		 <!--   <column name="BILL_DATE" property="rebuiltBillDate"/>
+  		    <column name="COMPANY_NAME" property="companyName"/>
+  		    <column name="TYRE_BILL_NUMBER" property="rebuiltBillNumber"/>
+  		   
+  		    <column name="TRANSACTION_DATE" property="requestedDate"/>
+  		    <column name="INCHARGE_NAME" property="inchargeName"/>  -->
+  		    
+  		    
+  		 <!-- For Tyre Forms-->
+  		 
+  		 <!--Tyre -->
+  		 
+  	        <column name="TYRENUMBER" property="tyreNumber"/>
+  	        <column name="REBUILTNUMBER" property="rebuiltNumber1"/>
+  		    <column name="REASON" property="rebuiltReason1"/>
+  		    <column name="REPAIRWORK" property="repairWork1"/>
+  		    <column name="REPAIRREASON" property="repairReason1"/>
+  			
+  			<column name="TYREPLY" property="tyrePly"/>
+  			<column name="TYRESIZE" property="tyreSize"/>
+  			<column name="TYREBRAND" property="tyreBrand"/>
+  			<column name="TYRESTATUS" property="tyreStatus"/>
+  			<column name="TYREPOSITION" property="tyrePosition"/>
+  			<column name="FITTINGKM" property="fittingKM"/>
+  			<column name="TYRESIZECODE" property="tyresizeCode"/>
+  			<column name="TYRESIZECTYPE" property="tyresizeCtype"/>
+  	        <column name="TYRESIZECDESC" property="tyresizeCdesc"/>
+  	        <column name="TYREBRANDCODE" property="tyrebrandCode"/>
+  			<column name="TYREBRANDCTYPE" property="tyrebrandCtype"/>
+  	        <column name="TYREBRANDCDESC" property="tyrebrandCdesc"/>
+  			<column name="TYREPLYCODE" property="tyreplyCode"/>
+  			<column name="TYREPLYCTYPE" property="tyreplyCtype"/>
+  		    <column name="TYREPLYCDESC" property="tyreplyCdesc"/>
+  		    <column name="TYREPOSITIONCODE" property="tyrepositionCode"/>
+  			<column name="TYREPOSITIONCTYPE" property="tyrepositionCtype"/>
+  		    <column name="TYREPOSITIONCDESC" property="tyrepositionCdesc"/>
+  		    <column name="JOBID" property="jobid"/>
+  		    
+  		    <column name="BILL_DATE" property="billDate"/>
+  		    <column name="BILL_NUMBER" property="billNumber"/>
+  		  <!--  <column name="COMPANY_NAME" property="companyName"/>-->
+  		    
+  		    <column name="TRANSACTION_DATE" property="requestedDate"/>
+  		    <column name="INCHARGE_NAME" property="inchargeName"/>
+  		    <column name="TYRE_AMOUNT" property="billAmount"/>
+  		   
+  		    <column name="CONDEMNDATE" property="condemnTyreDate"/>
+  		    <column name="CONDEMNREASON" property="condemnTyreReason"/>
+  		    
+  		    
+  		   <!-- OPERATIONS GENERAL COMBO -->
+  			
+  			<column name="DRIVERCODE" property="drivercode"/>
+  			<column name="DRIVERDESC" property="driverdesc"/>
+  			<column name="DRIVERID" property="driverId"/>
+  		    <column name="DRIVERNAMEDESC" property="drivernamedesc"/>
+  			<column name="ALTERDRIVERNAME" property="alternateBusDriverName"/>
+  			<column name="DEPARTMENT" property="department"/>
+  			<column name="DEPTCODE" property="deptcode"/>
+  			<column name="DEPTDESC" property="deptdesc"/>
+  		    <column name="INSTCODE" property="instcode"/>
+  			<!--<column name="INSTDESC" property="instdesc"/>-->
+  			<column name="INSTNAME" property="instituteName"/>
+  		    <column name="VEHICLEIDCODE" property="vehicleidcode"/>
+  			<column name="VEHICLEIDDESC" property="vehicleiddesc"/>
+  			<column name="VEHICLE_ID" property="vehicleId"/>
+  		    <column name="VEHICLETYPECODE" property="vehicletypecode"/>
+  			<column name="VEHICLETYPEDESC" property="vehicletypedesc"/>
+  		    <column name="DISTRICTCODE1" property="district1code"/>
+  			<column name="DISTRICTDESC1" property="district1desc"/>
+  			<column name="DISTRICTCODE2" property="district2code"/>
+  			<column name="DISTRICTDESC2" property="district2desc"/>
+  			<column name="STATECODE1" property="state1code"/>
+  			<column name="STATEDESC1" property="state1desc"/>
+  			<column name="STATECODE2" property="state2code"/>
+  			<column name="STATEDESC2" property="state2desc"/>
+  			<column name="COMMUNITYCODE" property="communitycode"/>
+  			<column name="COMMUNITYDESC" property="communitydesc"/>
+  			<column name="RELIGIONCODE" property="religioncode"/>
+  			<column name="RELIGIONDESC" property="religiondesc"/>
+  			<column name="SEQID" property="seqid"/>	
+  			
+  			<!-- DRIVER LEAVE DETAILS -->
+  			
+  			<column name="NO_DAYS_LEAVE" property="noOfDaysLeaveRequired"/>
+  			<column name="LEAVE_ALREADY_TAKEN" property="leaveAlreadyTaken"/>
+  			<column name="CASUAL_LEAVE" property="casualLeave"/>
+  			<column name="COMPENSATION_LEAVE" property="compensationLeave"/>
+  			<column name="MEDICAL_LEAVE" property="medicalLeave"/>
+  			<column name="VACATION_LEAVE" property="vacationLeave"/>
+  			 			  			
+  			<!-- DRIVER LICENCE COMBO-->
+  			<column name="CATEGORYCODE" property="categorycode"/>
+  			<column name="CATEGORYDESC" property="categorydesc"/>
+  			<column name="ENDORSEMENTCODE" property="endorsementcode"/>
+  			<column name="ENDORSEMENTDESC" property="endorsementdesc"/>
+  			
+  			
+  			<!-- DRIVER OFFICIAL COMBO -->
+  			
+  			<column name="BLOODGROUPCODE" property="bloodgpcode"/>
+  			<column name="BLOODGROUPDESC" property="bloodgpdesc"/>
+  			
+  			<!-- DRIVER OFFICIAL DETAILS -->
+  			
+  			<column name="INSTITUTE_NAME" property="instituteName"/>
+  			<column name="DEPT" property="department"/>
+  			<column name="EDUCATIONAL_QUALIFICATION" property="educationalQualification"/>
+  			<column name="MARKS" property="marks"/>
+  			<column name="TRANSPORT_EXP" property="transport"/>
+  			<column name="NON_TRANSPORT_EXP" property="nonTransport"/>
+  			<column name="DESC_NON_TRANSPORT_EXP" property="nonTransportDesc"/>
+  			<column name="BLOOD_GROUP" property="bloodGroup"/>
+  			<column name="LICENCE_NO" property="licenceNo"/>
+  			<column name="INSURANCE_NO" property="insuranceNo"/>
+  			 			
+  			<!-- DRIVER LICENCE DETAILS -->
+  		 
+  			<column name="BATCH_NO" property="batchNo"/>
+  			<column name="LICENCE_DATE" property="dateOfLicence"/>
+  			<column name="VALID_TILL" property="validPeriod"/>
+  			<column name="CATEGORY" property="category"/>
+  			<column name="PRE_LICENCE_EXPIRY" property="licenceExpiryDate"/>
+  			<column name="ENDORSEMENT" property="endorsement"/>
+  			<column name="PUNISHMENTS" property="punishment"/>
+  			
+  			<!-- DRIVER PERSONAL DETAILS-->
+  			<column name="DRIVER_ID" property="driverId"/>
+  			<column name="DRIVER_NAME" property="driverName"/>
+  			<column name="ADDRESS1" property="permanentAddress"/>
+  			<column name="DISTRICT1" property="district1"/>
+  			<column name="STATE1" property="state1"/>
+  			<column name="ADDRESS2" property="temporaryAddress"/>
+  			<column name="DISTRICT2" property="district2"/>
+			<column name="STATE2" property="state2"/>
+  			<column name="MOBILE_NO" property="mobileNo"/>
+  			<column name="RESIDENTIAL_NO1" property="residentialNo1"/>
+  		 	<column name="RESIDENTIAL_NO2" property="residentialNo2"/>
+  			<column name="SALARY" property="salary"/>
+			<column name="COMMUNITY" property="community"/>
+  			<column name="CASTE" property="caste"/>
+			<column name="RELIGION" property="religion"/>
+  		 	<column name="DOB" property="DOB"/>
+  			<column name="DOJ" property="DOJ"/>
+  			  			
+  			<!-- DRIVER INSURANCE DETAILS-->
+  		
+  			<column name="POLICY_NO" property="policyNo"/>
+  			<column name="POLICY_NAME" property="policyName"/>
+  			<column name="COVERAGE" property="coverage"/>
+  			<column name="PREMIUM_AMT" property="premiumAmt"/>
+  			<column name="INSUR_CMPY_ADDRESS" property="insuranceCmpyAddress"/>
+  			<column name="VALID_FROM" property="validFrom"/>
+  			<column name="VALID_TO" property="validTo"/>
+  			<column name="TIEUP_HOSPITALS" property="tieUp"/>
+  			<column name="COMPENSATION_AMT" property="compensationAmt"/>
+  			<column name="HOSPITAL_AMT" property="hospitalExpenses"/>
+  			<column name="BUFFER_AMT" property="buffer"/>
+  			<column name="CONSTRAINTS" property="constraints"/>
+  			
+  			<!--ROADTAX-->
+  			<column name="PERIODCODE" property="periodcode"/>
+  			<column name="PERIODDESC" property="perioddesc"/>
+  			<column name="ROADTAXPERIOD" property="roadTaxPeriod"/>
+  			<column name="OPTIONCODE" property="optioncode"/>
+  			<column name="OPTIONDESC" property="optiondesc"/>
+  			<column name="OPTION" property="yesNoOption"/>
+  			<column name="SEAT_CAPACITY" property="seatCapacity"/>
+  			<column name="RATE_PER_SEAT" property="ratePerSeat"/>
+  			<column name="TAX_AMT" property="taxAmt"/>
+  			<column name="TAX_PERIOD" property="roadTaxPeriod"/>
+  			<column name="REDUCTION_ALLOWED" property="yesNoOption"/>
+  			<column name="REDUCTION_PERCENTAGE" property="percentOfReduction"/>
+  			<column name="REDUCTION_AMOUNT" property="reductionAmt"/>
+  			<column name="GROSS_AMT" property="totalAmtAfterReduction"/>
+  		 	<column name="SUBCHARGE_PERCENTAGE" property="subTaxPercent"/>	
+  		 	<column name="SUBCHARGE_AMT" property="subTaxAmt"/>	
+  		 	<column name="GRAND_TOTAL" property="grandTotal"/>	
+  			
+  			<!--BUSALLOTMENT FORM-->
+  			<column name="VEHICLE_ALLOTED_DATE" property="vehicleAllottedDate"/>
+  			<column name="ROUTE_NO" property="routeNo"/>
+  			<column name="KM_PERDAY" property="kmTravelledPerDay"/>
+  			<column name="STARTING_PLACE" property="startPlace"/>
+  			<column name="VIA" property="via"/>
+  			<column name="LAST_STOP" property="lastStop"/>
+  			<column name="HALT_PLACE" property="haltPlace"/>
+  			<column name="HALT_RES_PHONENO" property="residentialNo"/>
+  			<column name="HALT_OFFICE_PHONENO" property="officeNo"/>
+  			<column name="PERMITTED_DISTRICT" property="permittedDistrict"/>
+  			<column name="DISTRICTCODE" property="districtcode"/>
+  			<column name="DISTRICTDESC" property="districtdesc"/>
+ 
+  			
+  			
+  			<!-- VEHICLEINSURANCE FORM -->
+  			
+  			<column name="VEHICLE_MODEL" property="vehicleModel"/>
+  			<column name="MARKET_VALUE" property="marketValue"/>
+  			<column name="INSURANCE_FROM" property="insuranceValidFrom"/>
+  			<column name="INSURANCE_TO" property="insuranceValidTo"/>
+  			<column name="EXISTING_COMPANY_NAME" property="existInsuranceCmpyName"/>
+  			<column name="EXISTING_VALUE_INSURED" property="existVehicleValue"/>
+  			<column name="EXISTING_PREMIUM_AMT" property="existInsurancePremiumAmt"/>
+  			<column name="PROPOSED_COMPANY_NAME" property="proposedInsuranceCmpyName"/>
+  			<column name="PROPOSED_VALUE_INSURED" property="proposedVehicleValue"/>
+  			<column name="PROPOSED_PREMIUM_AMT" property="proposedInsurancePremiumAmt"/>
+  			  		 		
+  			<!-- EQUIPMENTALLOTMENT FORM-->
+  			
+  			<column name="ETYRESIZECODE" property="tyresizecode"/>
+  			<column name="ETYRESIZEDESC" property="tyresizedesc"/>
+  			<column name="EQUIPMENTNAME" property="equipmentName"/>
+  			<column name="QUANTITY" property="equipmentQuantity"/>
+  			<column name="COMBO1CODE" property="combo1code"/>
+  			<column name="COMBO2CODE" property="combo2code"/>
+  			<column name="COMBO3CODE" property="combo3code"/>
+  			<column name="COMBO4CODE" property="combo4code"/>
+  			<column name="COMBO1DESC" property="combo1desc"/>
+  			<column name="COMBO2DESC" property="combo2desc"/>
+  			<column name="COMBO3DESC" property="combo3desc"/>
+  			<column name="COMBO4DESC" property="combo4desc"/>
+  			<column name="COMBO1" property="combo1"/>
+  			<column name="COMBO2" property="combo2"/>
+  			<column name="COMBO3" property="combo3"/>
+  			<column name="COMBO4" property="combo4"/>  			
+  			<column name="QUANTITY1" property="quantity1"/>
+  			<column name="QUANTITY2" property="quantity2"/>
+  			<column name="QUANTITY3" property="quantity3"/>
+  			<column name="QUANTITY4" property="quantity4"/>
+  			<column name="QUANTITY5" property="quantity5"/>
+  			<column name="QUANTITY6" property="quantity6"/>
+  			<column name="QUANTITY7" property="quantity7"/>
+  			<column name="QUANTITY8" property="quantity8"/>
+  			<column name="QUANTITY9" property="quantity9"/>
+  			<column name="QUANTITY10" property="quantity10"/>
+  			<column name="EQUIPMENTDESC" property="table1"/>
+  			
+  			<column name="OTHEREQUIPMENT" property="otherequipment"/>
+  			  			
+  			<!--OLD VEHICLE PURCHASE-->
+  					
+  			<column name="KM_TRAVELLED" property="kmTraveled"/>
+  			<column name="VEHICLE_AGE" property="vehicleAge"/>
+  			<column name="BDY_COMPANY_NAME" property="bodyCmpy"/> 	   		
+   		
+   		
+   			<!-- VEHICLE PURCHASE-->
+  			
+			<column name="PURCHASE_DATE" property="dateOfPurchase"/>
+			<column name="MANUFACTURING_DATE" property="manufacturingDate"/>
+			<column name="VINSTITUTE_NAME" property="instituteName"/>
+	
+			<column name="PRICE" property="price"/>
+			<column name="SUPPLIER_NAME" property="supplierName"/>
+			<column name="VVEHICLE_TYPE" property="vehicleType"/>
+  			<column name="MAKE" property="make"/>  
+  			<column name="CHASSIS_NO" property="chassisNo"/>
+  			<column name="ENGINE_NO" property="engineNo"/> 	
+  			<column name="BODY_TYPE" property="bodyType"/>	
+  			<column name="TANK_CAPACITY" property="tankCapacity"/>
+		    <column name="VSEAT_CAPACITY" property="seatCapacity"/>
+		    <column name="WHEEL_BASE" property="wheelBase"/>	
+		     <column name="VEHICLE_STATUS" property="vehicleStatus"/>  
+		     <column name="ROADTAX_PAID" property="roadyesNoOption"/>	  
+		    <column name="ROADTAX_FROM" property="roadTaxFrom"/>
+		    <column name="ROADTAX_TO" property="roadTaxTo"/>
+		   <column name="INSURANCE_PAID" property="insuranceOption"/>
+		    <column name="VINSURANCE_FROM" property="insuranceFrom"/>
+  			<column name="VINSURANCE_TO" property="insuranceTo"/>
+  			<column name="INSURANCE_CMPY_NAME" property="insuranceCmpyName"/>
+  			<column name="FC_EXPIRY_DATE" property="fcExpiryDate"/>
+  			<column name="VALID_PERMIT_DATE" property="validPermitDate"/>  	  			
+   			<column name="VEHICLESTATUSCODE" property="vehiclestatuscode"/>
+   			<column name="VEHICLESTATUSDESC" property="vehiclestatusdesc"/>
+  			
+  			<!-- ACCIDENT DETAILS-->
+  			
+  			<column name="AACCIDENT_DATE" property="accidentDate"/>
+  			<column name="AACCIDENT_TIME" property="accidentTime"/>
+  			<column name="AACCIDENT_PLACE" property="accidentPlace"/>
+  			<column name="ANEAR_POLICE_STATION" property="nearByPoliceStation"/>
+  			<column name="AVEHICLE_ID" property="vehicleId"/>
+  			<column name="AVEHICLE_TYPE" property="vehicleType"/>
+  			
+  			<column name="INSTITUTION" property="instituteName1"/>
+  			<column name="ADRIVER_ID" property="driverId"/>
+  			<column name="ADRIVER_NAME" property="driverName"/>
+  			<column name="OPPONENT_VEHICLE_ID" property="opponentVehicleId"/>
+  			<column name="OPPONENT_VEHICLE_TYPE" property="opponentVehicleType"/>
+  			<column name="PERSONS_INJURED" property="noOfPersonsInjured"/>
+  			<column name="FIR_FILED" property="FIROption"/>
+  			<column name="CASE_CLOSED" property="caseOption"/>
+  			<column name="INSURANCE_CLAIMED" property="insuranceOption"/>
+  			<column name="AMT_FROM_INSURANCE" property="amtClaimedFromInsurance"/>
+  			<column name="AMT_FROM_OPPONENT" property="amtClaimedFromOpponent"/>
+  			<column name="DRIVER_PAID" property="driverPaid"/>
+  			<column name="AINST" property="instituteName"/>
+  			<column name="INSTITUTE_PAID" property="amtPaidByInstitute"/>
+  			<column name="ACCIDENT_DESC" property="accidentDesc"/>
+  			<column name="EXPENSES" property="expense"/>
+  			
+  			<column name="INST1CODE" property="inst1code"/>
+  			<column name="INST1DESC" property="inst1desc"/>
+  			<column name="CASECODE" property="casecode"/>
+  			<column name="CASEDESC" property="casedesc"/>
+  			<column name="INSURANCECODE" property="insurancecode"/>
+  			<column name="INSURANCEDESC" property="insurancedesc"/>
+  			<column name="EXPENSECODE" property="expensecode"/>
+  			<column name="EXPENSEDESC" property="expensedesc"/>
+  			
+  			
+  			<!--BREAKDOWN FORM-->
+  			<column name="BREAKDOWN_DATE" property="breakDownDate"/>
+  			<column name="BREAKDOWN_TIME" property="breakDownTime"/>
+  			<column name="BREAKDOWN_PLACE" property="breakDownPlace"/>
+  			<!--<column name="ROUTENUMBER" property="routeNo"/>-->
+  			<column name="BREAKDOWN_NATURE" property="natureOfBreakDown"/>
+  			<column name="ALTERNATE_VEHICLE_ID" property="alternateBusId"/>
+  			<column name="ALTERNATE_DRIVER_ID" property="alterdriverId"/>
+  			<column name="ALTERNATE_DRIVER_NAME" property="alternateBusDriverName"/>
+  			<column name="BRREMARKS" property="remarks"/>
+  			
+		</column-mapping>
+  	</dao>
+</services>
+

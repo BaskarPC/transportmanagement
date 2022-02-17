@@ -1,0 +1,82 @@
+BODY
+{
+}
+.menuBar
+{
+    POSITION: relative;
+    BACKGROUND-COLOR: #CEE8F6;
+    TEXT-ALIGN: center
+ }   
+ 
+.Bar
+{ 
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;
+	FONT-SIZE: 9pt;
+	FONT-WEIGHT: bold;	
+	FLOAT: left;
+    WIDTH: 60px;
+    CURSOR: hand;
+    TEXT-INDENT: 5px;
+    POSITION: relative;
+    BACKGROUND-COLOR: #CEE8F6;
+    TEXT-ALIGN: center
+}
+.menu
+{ 
+    VISIBILITY: hidden; 
+    WIDTH: 100px;
+    LINE-HEIGHT: 140%; 
+    POSITION: absolute;
+    BACKGROUND-COLOR: #A2CFE9
+}
+
+
+.menuItem
+{
+	FONT-FAMILY: arial;	
+	FONT-SIZE: 8pt;	  
+    PADDING-LEFT: 10px;
+    WIDTH: 100%;
+    CURSOR: hand;
+    BORDER-BOTTOM: white 1px solid   
+}
+.ItemMouseOver
+{    
+	FONT-SIZE: 8pt;	 
+	PADDING-LEFT: 10px;
+    WIDTH: 100%;
+    CURSOR: hand;    
+    COLOR: highlighttext;  	
+    BACKGROUND-COLOR: #1F94D7;
+	BORDER-BOTTOM: white 1px solid
+}
+.ItemMouseOut
+{
+    WIDTH: 100%
+}
+.Arrow
+{
+    FLOAT: right;
+    FONT-FAMILY: Webdings;
+    POSITION: absolute;
+    TEXT-ALIGN: left
+}
+.barOver
+{
+   
+    FLOAT: left;
+	FONT-WEIGHT: bold;
+    WIDTH: 60px;
+    CURSOR: hand;
+    TEXT-INDENT: 5px;
+    COLOR: highlighttext;
+    POSITION: relative;
+    BACKGROUND-COLOR:#1F94D7;
+    TEXT-ALIGN: center
+}
+.mm
+{
+	FONT-FAMILY: arial, helvetica, verdana, sans-serif;	
+	FONT-SIZE: 8pt;	  
+	COLOR: black;
+}
